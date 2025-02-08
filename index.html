@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фитнес сайт</title>
 
-    <!-- Подключаем Swiper.js (слайдер) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <style>
@@ -16,14 +15,13 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Логотип + навигация */
         .header {
             position: absolute;
             top: 27px;
-            left: 380px; /* Передвинуто на 10px левее */
+            left: 419px;
             display: flex;
             align-items: center;
-            gap: 20px; /* Сокращено расстояние между элементами */
+            gap: 20px;
             z-index: 20;
         }
 
@@ -40,7 +38,6 @@
             color: black;
         }
 
-        /* Контейнер */
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -49,47 +46,16 @@
             height: 100%;
         }
 
-        .item {
-            width: 100%;
-            position: relative;
-        }
-
         .item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Блок слайдера */
-        .slider-wrapper {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            max-width: 800px;
-            z-index: 10;
+        #about-section, #slider-section, #prices-section, #contacts-section {
+            scroll-margin-top: 50px;
         }
 
-        .swiper {
-            width: 100%;
-        }
-
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .swiper-slide img {
-            width: 40%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Плавный скролл */
         html {
             scroll-behavior: smooth;
         }
@@ -97,79 +63,28 @@
 </head>
 <body>
 
-    <!-- Логотип + ссылки -->
     <div class="header">
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
         </div>
         <a href="#about-section" class="nav-link">О НАС</a>
         <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
-        <a href="#cb-club-section" class="nav-link">CB CLUB</a>
+        <a href="#cbclub-section" class="nav-link">CB CLUB</a>
+        <a href="#prices-section" class="nav-link">ЦЕНЫ</a>
+        <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
     </div>
 
     <div class="container">
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
-        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
-
-        <!-- Блок слайдера -->
-        <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
-
-            <div class="slider-wrapper">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
-                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
-                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
-                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/result4.jpeg" alt="4">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/result5.jpeg" alt="5">
-                        </div>
-                    </div>
-
-                    <!-- Навигация -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
+        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
+        <div class="item" id="slider-section"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"></div>
+        <div class="item" id="cbclub-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
+        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
+        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
     </div>
 
-    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
-
 </body>
 </html>
 
