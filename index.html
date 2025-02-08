@@ -21,7 +21,7 @@
         .header {
             position: absolute;
             top: 27px;
-            left: 370px; /* Подогнал под логотип */
+            left: 370px;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -79,7 +79,7 @@
         /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
-            bottom: 5%;
+            bottom: calc(5% - 100px); /* Опустил слайды вниз на 100px */
             left: 50%;
             transform: translateX(-50%);
             width: 50%;
@@ -120,14 +120,13 @@
             font-size: 24px;
             text-align: center;
             line-height: 50px;
-            display: none; /* Скрыта по умолчанию */
+            display: none;
             z-index: 100;
         }
 
         .scroll-to-top:hover {
             background: rgba(0, 0, 0, 0.7);
         }
-
     </style>
 </head>
 <body>
@@ -233,4 +232,5 @@
 
 </body>
 </html>
+
 
