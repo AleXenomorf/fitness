@@ -39,14 +39,14 @@
             object-fit: cover; 
         }
 
-        /* Блок слайдера (вставляем внутрь блока с images4.png) */
+        /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
             bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
             width: 60%;
-            max-width: 800px;
+            max-width: 700px; /* Уменьшено на 15% */
             z-index: 10;
         }
 
@@ -58,18 +58,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 15px; 
         }
 
         .swiper-slide img {
-            width: 45%;
+            width: 38%; 
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .swiper-slide.single img {
-            width: 60%;
+            width: 50%; 
         }
     </style>
 </head>
@@ -139,3 +139,4 @@
 
 </body>
 </html>
+
