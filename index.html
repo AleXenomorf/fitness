@@ -16,13 +16,14 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Логотип + текстовые ссылки */
+        /* Логотип + Меню */
         .header {
             position: absolute;
             top: 27px;
             left: 419px;
             display: flex;
             align-items: center;
+            gap: 20px;
             z-index: 20;
         }
 
@@ -31,16 +32,7 @@
             height: 96.74px;
         }
 
-        /* Блок с текстовыми ссылками */
-        .links {
-            display: flex;
-            align-items: center;
-            margin-left: 5px; /* Сдвиг "О НАС" на 5px вправо */
-            gap: 15px; /* Расстояние между элементами */
-        }
-
-        /* Стили для ссылок */
-        .about-link, .before-after-link, .cb-club-link {
+        .nav-link {
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
@@ -48,11 +40,10 @@
             color: black;
         }
 
-        /* Контейнер */
         .container {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(10, auto); /* Увеличено количество строк */
+            grid-template-rows: repeat(10, auto);
             gap: 0;
             height: 100%;
         }
@@ -97,16 +88,6 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Цели скролла */
-        #about-section {
-            scroll-margin-top: 50px;
-        }
-
-        #slider-section {
-            scroll-margin-top: 50px;
-        }
-
-        /* Плавный скролл */
         html {
             scroll-behavior: smooth;
         }
@@ -114,16 +95,13 @@
 </head>
 <body>
 
-    <!-- Логотип + ссылки -->
     <div class="header">
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
         </div>
-        <div class="links">
-            <a href="#about-section" class="about-link">О НАС</a>
-            <a href="#slider-section" class="before-after-link">ДО/ПОСЛЕ</a>
-            <a href="#cb-club-section" class="cb-club-link">CB CLUB</a>
-        </div>
+        <a href="#about-section" class="nav-link">О НАС</a>
+        <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
+        <a href="#cb-club-section" class="nav-link">CB CLUB</a>
     </div>
 
     <div class="container">
@@ -131,11 +109,8 @@
         <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
-        <!-- Блок с фоном и слайдером -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
-
-            <!-- Слайдер -->
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -158,8 +133,6 @@
                             <img src="https://alexenomorf.github.io/fitness/result5.jpeg" alt="5">
                         </div>
                     </div>
-
-                    <!-- Навигация -->
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
@@ -170,13 +143,9 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
-
-        <!-- Новые изображения -->
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
         <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -191,8 +160,6 @@
             },
         });
     </script>
-
 </body>
 </html>
-
 
