@@ -20,10 +20,10 @@
         /* Контейнер */
         .container {
             display: grid;
-            grid-template-columns: 1fr; 
-            grid-template-rows: repeat(8, auto); 
-            gap: 0; 
-            height: 100%; 
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(8, auto);
+            gap: 0;
+            height: 100%;
         }
 
         /* Каждый элемент */
@@ -35,26 +35,26 @@
         /* Изображения */
         .item img {
             width: 100%;
-            height: 100%; 
-            object-fit: cover; 
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Логотип */
         .logo {
             position: absolute;
-            top: 27px; /* Координата Y */
-            left: 419px; /* Координата X */
-            width: 150px; /* Можно настроить размер */
-            height: auto;
-            z-index: 20; /* Выше других элементов */
+            top: 27px;
+            left: 419px;
+            width: 128px;
+            height: 96.74px;
+            z-index: 20;
         }
 
-        /* Блок слайдера (вставляем внутрь блока с images4.png) */
+        /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.85); /* Уменьшаем размер на 15% */
+            transform: translate(-50%, -50%) scale(0.85); /* Уменьшение на 15% */
             width: 80%;
             max-width: 900px;
             z-index: 10;
@@ -66,12 +66,13 @@
 
         .swiper-slide {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 20px;
         }
 
         .swiper-slide img {
-            width: 48%;
+            width: 40%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -79,9 +80,7 @@
     </style>
 </head>
 <body>
-
-    <!-- Логотип -->
-    <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип" class="logo">
+    <img class="logo" src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
 
     <div class="container">
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
@@ -91,8 +90,6 @@
         <!-- Блок с фоном и слайдером -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
-
-            <!-- Слайдер -->
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -101,8 +98,8 @@
                             <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="Result 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="Result 2">
                             <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="Result 2-2">
+                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="Result 2">
                         </div>
                         <div class="swiper-slide">
                             <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="Result 3-3">
@@ -115,7 +112,6 @@
                             <img src="https://alexenomorf.github.io/fitness/result5.jpeg" alt="Result 5">
                         </div>
                     </div>
-
                     <!-- Навигация -->
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -144,9 +140,6 @@
             },
         });
     </script>
-
 </body>
-</html>
-
 </html>
 
