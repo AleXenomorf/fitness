@@ -61,6 +61,21 @@
             object-fit: cover;
         }
 
+        /* Логотип на фоне images1 */
+        .logo-overlay {
+            position: absolute;
+            top: 194px;
+            left: 468px;
+            width: 448px;
+            height: 72px;
+        }
+
+        .logo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
@@ -130,7 +145,14 @@
     </div>
 
     <div class="container">
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
+        <!-- Первый блок с images1 и logo2 -->
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+            <div class="logo-overlay">
+                <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
+            </div>
+        </div>
+
         <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
