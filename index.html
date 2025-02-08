@@ -39,14 +39,24 @@
             object-fit: cover; 
         }
 
-        /* Блок слайдера */
+        /* Логотип */
+        .logo {
+            position: absolute;
+            top: 27px; /* Координата Y */
+            left: 419px; /* Координата X */
+            width: 150px; /* Можно настроить размер */
+            height: auto;
+            z-index: 20; /* Выше других элементов */
+        }
+
+        /* Блок слайдера (вставляем внутрь блока с images4.png) */
         .slider-wrapper {
             position: absolute;
-            bottom: 10%;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            max-width: 700px; /* Уменьшено на 15% */
+            transform: translate(-50%, -50%) scale(0.85); /* Уменьшаем размер на 15% */
+            width: 80%;
+            max-width: 900px;
             z-index: 10;
         }
 
@@ -56,24 +66,22 @@
 
         .swiper-slide {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 15px; 
         }
 
         .swiper-slide img {
-            width: 38%; 
+            width: 48%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
-
-        .swiper-slide.single img {
-            width: 50%; 
-        }
     </style>
 </head>
 <body>
+
+    <!-- Логотип -->
+    <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип" class="logo">
 
     <div class="container">
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
@@ -100,10 +108,10 @@
                             <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="Result 3-3">
                             <img src="https://alexenomorf.github.io/fitness/3.png" alt="Result 3">
                         </div>
-                        <div class="swiper-slide single">
+                        <div class="swiper-slide">
                             <img src="https://alexenomorf.github.io/fitness/result4.jpeg" alt="Result 4">
                         </div>
-                        <div class="swiper-slide single">
+                        <div class="swiper-slide">
                             <img src="https://alexenomorf.github.io/fitness/result5.jpeg" alt="Result 5">
                         </div>
                     </div>
@@ -138,5 +146,7 @@
     </script>
 
 </body>
+</html>
+
 </html>
 
