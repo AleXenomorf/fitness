@@ -29,11 +29,24 @@
             height: 96.74px;
         }
 
-        /* "О НАС" поверх images1 */
+        /* "О НАС" */
         .about-link {
             position: absolute;
-            top: 65px; /* Было 55px, опустил еще на 10px */
+            top: 65px;
             left: 570px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            z-index: 30;
+        }
+
+        /* "ДО/ПОСЛЕ" */
+        .before-after-link {
+            position: absolute;
+            top: 65px;
+            left: 610px; /* На 20px правее "О НАС" */
             font-size: 20px;
             font-weight: bold;
             cursor: pointer;
@@ -92,7 +105,8 @@
         }
 
         /* Цель скролла */
-        #about-section {
+        #about-section,
+        #slider-section {
             scroll-margin-top: 50px;
         }
 
@@ -109,8 +123,9 @@
         <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
     </div>
 
-    <!-- Ссылка "О НАС" -->
+    <!-- Навигационные ссылки -->
     <a href="#about-section" class="about-link">О НАС</a>
+    <a href="#slider-section" class="before-after-link">ДО/ПОСЛЕ</a>
 
     <div class="container">
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
@@ -118,7 +133,7 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
         <!-- Блок с фоном и слайдером -->
-        <div class="item">
+        <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
 
             <!-- Слайдер -->
