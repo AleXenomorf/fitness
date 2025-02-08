@@ -56,8 +56,9 @@
 
         .swiper-slide {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 20px;
         }
 
         .swiper-slide img {
@@ -65,6 +66,10 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .swiper-slide.single img {
+            width: 60%;
         }
     </style>
 </head>
@@ -95,9 +100,11 @@
                             <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="Result 3-3">
                             <img src="https://alexenomorf.github.io/fitness/3.png" alt="Result 3">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/mini_result6,6.jpeg" alt="Result 6-6">
-                            <img src="https://alexenomorf.github.io/fitness/mini_result6.jpeg" alt="Result 6">
+                        <div class="swiper-slide single">
+                            <img src="https://alexenomorf.github.io/fitness/result4.jpeg" alt="Result 4">
+                        </div>
+                        <div class="swiper-slide single">
+                            <img src="https://alexenomorf.github.io/fitness/result5.jpeg" alt="Result 5">
                         </div>
                     </div>
 
@@ -132,4 +139,3 @@
 
 </body>
 </html>
-
