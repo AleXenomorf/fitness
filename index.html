@@ -13,13 +13,14 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Логотип и "О НАС" */
         .header {
             position: absolute;
             top: 27px;
             left: 419px;
             display: flex;
             align-items: center;
-            gap: 20px; /* Расстояние между логотипом и "О НАС" */
+            gap: 50px; /* Расстояние между логотипом и "О НАС" */
         }
 
         .logo img {
@@ -39,6 +40,7 @@
             color: red;
         }
 
+        /* Контейнер */
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -58,13 +60,20 @@
             object-fit: cover;
         }
 
+        /* Цель скролла */
         #about-section {
             scroll-margin-top: 50px;
+        }
+
+        /* Плавный скролл */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
 
+    <!-- Логотип + ссылка "О НАС" -->
     <div class="header">
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
@@ -80,5 +89,4 @@
 
 </body>
 </html>
-
 
