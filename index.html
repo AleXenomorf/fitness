@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фитнес сайт</title>
 
-    <!-- Подключаем Swiper.js (слайдер) -->
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <style>
-        /* Общие стили */
+        
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Контейнер */
+       
         .container {
             display: grid;
             grid-template-columns: 1fr; 
@@ -26,21 +26,21 @@
             height: 100%; 
         }
 
-        /* Каждый элемент */
+       
         .item {
             width: 100%;
             position: relative;
         }
 
-        /* Изображения */
+       
         .item img {
             width: 100%;
             height: 100%; 
             object-fit: cover; 
         }
 
-        /* Слайдер поверх фонового блока */
-        .slider-container {
+        
+        .slider-wrapper {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -74,42 +74,47 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"></div> <!-- Фон -->
+
+        
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
+
+       
+            <div class="slider-wrapper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+                            <img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3">
+                            <img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 5">
+                            <img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 6">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 7">
+                            <img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 8">
+                        </div>
+                    </div>
+
+                  
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
     </div>
 
-    <!-- Слайдер поверх фонового изображения -->
-    <div class="slider-container">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
-                    <img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3">
-                    <img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 4">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 5">
-                    <img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 6">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 7">
-                    <img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 8">
-                </div>
-            </div>
-
-            <!-- Навигация -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div>
-
-    <!-- Подключение Swiper.js -->
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
