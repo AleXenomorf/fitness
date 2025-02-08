@@ -32,24 +32,20 @@
             height: 96.74px;
         }
 
-        /* Ссылки "О НАС" и "ДО/ПОСЛЕ" */
+        /* Блок с текстовыми ссылками */
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 50px; /* Расстояние между ссылками */
+        }
+
+        /* Стили для ссылок */
         .about-link, .before-after-link {
-            position: absolute;
-            top: 65px;
-            font-size: 18px; /* Уменьшено */
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
-            z-index: 30;
-        }
-
-        .about-link {
-            left: 570px;
-        }
-
-        .before-after-link {
-            left: 660px;
         }
 
         /* Контейнер */
@@ -101,7 +97,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Цель скролла */
+        /* Цели скролла */
         #about-section, #slider-section {
             scroll-margin-top: 50px;
         }
@@ -119,8 +115,10 @@
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
         </div>
-        <a href="#about-section" class="about-link">О НАС</a>
-        <a href="#slider-section" class="before-after-link">ДО/ПОСЛЕ</a>
+        <div class="links">
+            <a href="#about-section" class="about-link">О НАС</a>
+            <a href="#slider-section" class="before-after-link">ДО/ПОСЛЕ</a>
+        </div>
     </div>
 
     <div class="container">
@@ -187,3 +185,4 @@
 
 </body>
 </html>
+
