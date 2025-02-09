@@ -111,7 +111,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px; /* ОТСТУП 30px МЕЖДУ ИЗОБРАЖЕНИЯМИ */
+            gap: 20px; /* ОТСТУП 20px МЕЖДУ ИЗОБРАЖЕНИЯМИ */
         }
 
         .swiper-slide img {
@@ -197,8 +197,11 @@
             /* Разделение "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" на мобильной версии */
             .results-header {
                 flex-direction: column;
-                gap: 20px;
                 font-size: 23px; /* В 2 раза меньше */
+            }
+
+            .results-header .students {
+                margin-top: 10px; /* Добавлен отступ 10px для "ПОДОПЕЧНЫХ" */
             }
         }
     </style>
