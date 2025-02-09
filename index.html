@@ -20,13 +20,13 @@
         /* Логотип + навигация */
         .header {
             position: absolute;
-            top: 2vw;
-            left: 18vw;
+            top: 2.5vw;
+            left: calc(10vw - 100px);
             display: flex;
             align-items: center;
-            gap: 2vw;
+            gap: 1.5vw;
             z-index: 20;
-            font-size: 1vw;
+            transform-origin: top left;
         }
 
         .logo img {
@@ -58,32 +58,33 @@
 
         .item img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
         }
 
         /* Логотип на фоне images1 */
         .logo-overlay {
             position: absolute;
-            top: 12vw;
-            left: 23vw;
-            width: 28vw;
+            top: 15vw;
+            left: calc(15vw - 100px);
+            width: 30vw;
             height: auto;
+            transform-origin: top left;
         }
 
         .logo-overlay img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: contain;
         }
 
         /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
-            bottom: 10vw;
+            bottom: 15%;
             left: 50%;
             transform: translateX(-50%);
-            width: 50vw;
+            width: 50%;
             max-width: 800px;
             z-index: 10;
         }
@@ -109,18 +110,18 @@
         /* Кнопка наверх */
         .scroll-to-top {
             position: fixed;
-            bottom: 2vw;
-            right: 2vw;
-            width: 3vw;
-            height: 3vw;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 1.5vw;
+            font-size: 24px;
             text-align: center;
-            line-height: 3vw;
+            line-height: 50px;
             display: none;
             z-index: 100;
         }
@@ -129,29 +130,31 @@
             background: rgba(0, 0, 0, 0.7);
         }
 
+        /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
             .header {
-                left: 10vw;
-                gap: 1.5vw;
+                left: calc(5vw - 100px);
+                top: 4vw;
+                transform: scale(0.8);
             }
 
             .logo img {
-                width: 12vw;
+                width: 10vw;
             }
 
             .nav-link {
-                font-size: 3vw;
+                font-size: 2.5vw;
             }
 
             .logo-overlay {
-                top: 14vw;
-                left: 15vw;
+                top: 20vw;
+                left: calc(5vw - 100px);
                 width: 40vw;
             }
 
             .slider-wrapper {
-                bottom: 5vw;
-                width: 80vw;
+                width: 80%;
+                bottom: 10%;
             }
 
             .swiper-slide img {
@@ -160,35 +163,15 @@
         }
 
         @media (max-width: 480px) {
-            .header {
-                left: 5vw;
-                gap: 1vw;
-            }
-
-            .logo img {
-                width: 15vw;
-            }
-
-            .nav-link {
-                font-size: 4vw;
-            }
-
-            .logo-overlay {
-                top: 16vw;
-                left: 10vw;
-                width: 50vw;
-            }
-
             .slider-wrapper {
-                bottom: 2vw;
-                width: 90vw;
+                width: 90%;
+                bottom: 5%;
             }
 
             .swiper-slide img {
                 width: 48%;
             }
         }
-
     </style>
 </head>
 <body>
@@ -216,6 +199,7 @@
         <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
+        <!-- Блок слайдера -->
         <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
             <div class="slider-wrapper">
@@ -240,10 +224,15 @@
             </div>
         </div>
 
+        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
+        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
+        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
+    <!-- Кнопка "Наверх" -->
     <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
+    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -259,12 +248,9 @@
                 },
             });
         });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
     </script>
 
 </body>
 </html>
+
 
