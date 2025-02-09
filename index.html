@@ -16,6 +16,31 @@
             scroll-behavior: smooth;
         }
 
+        /* Логотип + навигация */
+        .header {
+            position: absolute;
+            top: 2.5vw;
+            left: calc(10vw - 100px);
+            display: flex;
+            align-items: center;
+            gap: 1.5vw;
+            z-index: 20;
+        }
+
+        .logo img {
+            width: 8vw;
+            height: auto;
+        }
+
+        .nav-link {
+            font-size: 1.2vw;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Основной контейнер */
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -30,11 +55,11 @@
 
         .item img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
         }
 
-        /* Логотип и надписи на images1 */
+        /* Логотип на фоне images1 */
         .logo-overlay {
             position: absolute;
             top: 15vw;
@@ -49,45 +74,29 @@
             object-fit: contain;
         }
 
-        /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
-        .results-title {
-            position: absolute;
-            top: 100px; /* Отступ от верхнего края images4 */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            gap: 80px;
-            font-size: 92px; /* В 2 раза больше */
-            font-weight: bold;
-            z-index: 10;
-        }
-
-        .results-title .white {
-            color: #FFFFFF;
-        }
-
-        .results-title .blue {
-            color: #22ECE1;
-        }
-
         /* Секция слайдера */
         #slider-section {
             position: relative;
-            height: 100%;
+            height: 110%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        #slider-section img {
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+        }
+
         .slider-wrapper {
             position: absolute;
-            top: 50%;
+            top: calc(50% + 50px); /* Сдвиг фото на 50 пикселей ниже */
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
-            max-width: 1800px;
-            height: auto;
+            width: 80%;
+            max-width: 800px;
+            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -102,32 +111,112 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 80px;
+            gap: 10px;
         }
 
         .swiper-slide img {
-            width: 84%; /* В 2 раза больше */
-            max-height: 100%;
+            width: 36%;
+            max-height: 90%;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-            object-position: top;
+        }
+
+        /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+        .results-header {
+            position: absolute;
+            top: 100px; /* 100px от верхнего края images4 */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .results-header div {
+            font-size: 46px;
+            width: 300px;
+            height: 46px;
+        }
+
+        .results-header .results {
+            color: #FFFFFF;
+        }
+
+        .results-header .students {
+            color: #22ECE1;
+            margin-top: 20px; /* Расстояние 20px между строками */
         }
 
         /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
-            .results-title {
-                top: 100px; /* Отступ 100px на моб версии */
-                font-size: 12vw;
+            .header {
+                left: calc(5vw - 100px);
+                top: 4vw;
+                transform: scale(0.8);
+            }
+
+            .logo img {
+                width: 10vw;
+            }
+
+            .nav-link {
+                font-size: 2.5vw;
+            }
+
+            .logo-overlay {
+                top: 20vw;
+                left: calc(5vw - 100px);
+                width: 40vw;
+            }
+
+            /* Увеличение высоты images4 только для мобильных */
+            #slider-section {
+                height: 130vh;
+            }
+
+            #slider-section img {
+                height: 130vh;
+                object-fit: cover;
+            }
+
+            .slider-wrapper {
+                width: 95%;
+                height: 75%;
+            }
+
+            /* Вертикальное расположение фото в слайдах */
+            .swiper-slide {
+                flex-direction: column;
+                gap: 20px;
             }
 
             .swiper-slide img {
-                width: 100%;
+                width: 45%;
+                max-height: 50%;
+            }
+
+            .results-header {
+                top: 100px; /* Оставляем на том же месте */
+            }
+
+            .results-header .students {
+                margin-top: 20px;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Логотип + ссылки -->
+    <div class="header">
+        <div class="logo">
+            <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
+        </div>
+        <a href="#about-section" class="nav-link">О НАС</a>
+        <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
+        <a href="#cb-club-section" class="nav-link">CB CLUB</a>
+        <a href="#prices-section" class="nav-link">ЦЕНЫ</a>
+        <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
+    </div>
 
     <div class="container">
         <div class="item">
@@ -137,16 +226,16 @@
             </div>
         </div>
 
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
+        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
-        <!-- Блок слайдера на images4 -->
+        <!-- Блок слайдера -->
         <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
-            
-            <div class="results-title">
-                <span class="white">РЕЗУЛЬТАТЫ</span>
-                <span class="blue">ПОДОПЕЧНЫХ</span>
+
+            <div class="results-header">
+                <div class="results">РЕЗУЛЬТАТЫ</div>
+                <div class="students">ПОДОПЕЧНЫХ</div>
             </div>
 
             <div class="slider-wrapper">
@@ -160,15 +249,7 @@
                             <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
                             <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
-                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
-                        </div>
                     </div>
-
-                    <!-- Навигация -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
@@ -181,25 +262,6 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            new Swiper('.swiper', {
-                loop: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-            });
-        });
-    </script>
-
 </body>
 </html>
-
-
 
