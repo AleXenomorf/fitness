@@ -20,50 +20,27 @@
         /* Логотип + навигация */
         .header {
             position: absolute;
-            top: 3vh;
-            left: 5vw;
+            top: 2.7vh;
+            left: 19vw;
             display: flex;
             align-items: center;
-            gap: 2vw;
+            gap: 1.5vw;
             z-index: 20;
         }
 
         .logo img {
-            width: 10vw;
+            width: 8vw;
             min-width: 80px;
             height: auto;
         }
 
         .nav-link {
-            font-size: 1.5vw;
+            font-size: 1.2vw;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
             white-space: nowrap;
-        }
-
-        /* Адаптивность шапки */
-        @media (max-width: 1024px) {
-            .header {
-                left: 50%;
-                transform: translateX(-50%);
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1.5vw;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: center;
-                top: 1vh;
-            }
-
-            .nav-link {
-                font-size: 2.5vw;
-            }
         }
 
         /* Контейнер */
@@ -88,9 +65,9 @@
         /* Логотип поверх images1 */
         .logo-overlay {
             position: absolute;
-            top: 15vh;
-            left: 10vw;
-            width: 30vw;
+            top: 19.4vh;
+            left: 35vw;
+            width: 25vw;
             max-width: 450px;
         }
 
@@ -98,30 +75,6 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-        }
-
-        /* Адаптивность логотипа */
-        @media (max-width: 1024px) {
-            .logo-overlay {
-                top: 10vh;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 40vw;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logo-overlay {
-                width: 50vw;
-                top: 8vh;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-overlay {
-                width: 60vw;
-                top: 5vh;
-            }
         }
 
         /* Блок слайдера */
@@ -133,26 +86,6 @@
             width: 50vw;
             max-width: 800px;
             z-index: 10;
-        }
-
-        @media (max-width: 768px) {
-            .slider-wrapper {
-                width: 90vw;
-            }
-
-            .swiper-slide img {
-                width: 45%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .swiper-slide {
-                flex-direction: column;
-            }
-
-            .swiper-slide img {
-                width: 70%;
-            }
         }
 
         /* Кнопка наверх */
@@ -176,6 +109,68 @@
 
         .scroll-to-top:hover {
             background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* 🔹 АДАПТИВНОСТЬ 🔹 */
+        @media (max-width: 1024px) {
+            .header {
+                left: 50%;
+                transform: translateX(-50%);
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2vw;
+            }
+
+            .logo img {
+                width: 12vw;
+            }
+
+            .nav-link {
+                font-size: 2vw;
+            }
+
+            .logo-overlay {
+                top: 15vh;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 35vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                top: 1vh;
+            }
+
+            .nav-link {
+                font-size: 3vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .logo-overlay {
+                width: 40vw;
+                top: 12vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-overlay {
+                width: 50vw;
+                top: 8vh;
+            }
+
+            .nav-link {
+                font-size: 4vw;
+            }
+
+            .logo img {
+                width: 20vw;
+            }
         }
     </style>
 </head>
@@ -250,3 +245,4 @@
 
 </body>
 </html>
+
