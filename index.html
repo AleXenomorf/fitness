@@ -16,70 +16,12 @@
             scroll-behavior: smooth;
         }
 
-        /* Логотип + навигация */
-        .header {
-            position: absolute;
-            top: 2.5vw;
-            left: calc(10vw - 100px);
-            display: flex;
-            align-items: center;
-            gap: 1.5vw;
-            z-index: 20;
-        }
-
-        .logo img {
-            width: 8vw;
-            height: auto;
-        }
-
-        .nav-link {
-            font-size: 1.2vw;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            color: black;
-        }
-
-        /* Основной контейнер */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(10, auto);
-            height: 100%;
-        }
-
-        .item {
-            width: 100%;
-            position: relative;
-        }
-
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Логотип на images1 */
-        .logo-overlay {
-            position: absolute;
-            top: 15vw;
-            left: calc(15vw - 100px);
-            width: 30vw;
-            height: auto;
-        }
-
-        .logo-overlay img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
         /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-title {
             position: absolute;
-            top: 45%; /* Поднял на 30px */
+            top: 100px; /* Отступ от верхнего края images4 */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
             gap: 40px;
@@ -99,7 +41,7 @@
         /* Секция слайдера */
         #slider-section {
             position: relative;
-            height: 110%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -107,7 +49,7 @@
 
         #slider-section img {
             width: 100%;
-            height: 110%;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -147,87 +89,21 @@
 
         /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
-            .header {
-                left: calc(5vw - 100px);
-                top: 4vw;
-                transform: scale(0.8);
-            }
-
-            .logo img {
-                width: 10vw;
-            }
-
-            .nav-link {
-                font-size: 2.5vw;
-            }
-
-            .logo-overlay {
-                top: 20vw;
-                left: calc(5vw - 100px);
-                width: 40vw;
-            }
-
-            /* Увеличение высоты images4 */
-            #slider-section {
-                height: 200vh;
-            }
-
-            #slider-section img {
-                height: 200vh;
-                object-fit: cover;
-            }
-
             .results-title {
-                top: 22%;
+                top: 100px; /* Отступ 100px на моб версии */
                 font-size: 6vw;
-            }
-
-            .slider-wrapper {
-                top: 55%;
-                width: 95%;
-                height: auto;
-            }
-
-            .swiper-slide {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .swiper-slide img {
-                width: 150px;
-                height: 150px;
-                object-fit: cover;
-                object-position: top;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Логотип + ссылки -->
-    <div class="header">
-        <div class="logo">
-            <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
-        </div>
-        <a href="#about-section" class="nav-link">О НАС</a>
-        <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
-        <a href="#cb-club-section" class="nav-link">CB CLUB</a>
-        <a href="#prices-section" class="nav-link">ЦЕНЫ</a>
-        <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
-    </div>
-
     <div class="container">
-        <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
-            <div class="logo-overlay">
-                <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
-            </div>
-        </div>
-
-        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
-        <!-- Заголовок + Слайды на images4 -->
+        <!-- Блок слайдера на images4 -->
         <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
             
@@ -247,7 +123,15 @@
                             <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
                             <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
                         </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
+                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
+                        </div>
                     </div>
+
+                    <!-- Навигация -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
@@ -259,6 +143,23 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Swiper('.swiper', {
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
+        });
+    </script>
+
 </body>
 </html>
-
