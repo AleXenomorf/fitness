@@ -20,13 +20,13 @@
         /* Логотип + навигация */
         .header {
             position: absolute;
-            top: 2.5vw;
-            left: calc(10vw - 100px); /* Сдвинул ещё левее на 100px */
+            top: 2vw;
+            left: 18vw;
             display: flex;
             align-items: center;
-            gap: 1.5vw;
+            gap: 2vw;
             z-index: 20;
-            transform-origin: top left;
+            font-size: 1vw;
         }
 
         .logo img {
@@ -58,33 +58,32 @@
 
         .item img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
         }
 
         /* Логотип на фоне images1 */
         .logo-overlay {
             position: absolute;
-            top: 15vw;
-            left: calc(15vw - 100px); /* Сдвинул ещё левее на 100px */
-            width: 30vw;
+            top: 12vw;
+            left: 23vw;
+            width: 28vw;
             height: auto;
-            transform-origin: top left;
         }
 
         .logo-overlay img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: contain;
         }
 
         /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
-            bottom: 15%;
+            bottom: 10vw;
             left: 50%;
             transform: translateX(-50%);
-            width: 50%;
+            width: 50vw;
             max-width: 800px;
             z-index: 10;
         }
@@ -97,7 +96,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 2vw;
         }
 
         .swiper-slide img {
@@ -110,18 +109,18 @@
         /* Кнопка наверх */
         .scroll-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
+            bottom: 2vw;
+            right: 2vw;
+            width: 3vw;
+            height: 3vw;
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 24px;
+            font-size: 1.5vw;
             text-align: center;
-            line-height: 50px;
+            line-height: 3vw;
             display: none;
             z-index: 100;
         }
@@ -130,37 +129,66 @@
             background: rgba(0, 0, 0, 0.7);
         }
 
-        /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
             .header {
-                left: calc(5vw - 100px);
-                top: 4vw;
-                transform: scale(0.8);
+                left: 10vw;
+                gap: 1.5vw;
             }
 
             .logo img {
-                width: 10vw;
+                width: 12vw;
             }
 
             .nav-link {
-                font-size: 2.5vw;
+                font-size: 3vw;
             }
 
             .logo-overlay {
-                top: 20vw;
-                left: calc(5vw - 100px);
+                top: 14vw;
+                left: 15vw;
                 width: 40vw;
             }
 
             .slider-wrapper {
-                width: 80%;
-                bottom: 10%;
+                bottom: 5vw;
+                width: 80vw;
             }
 
             .swiper-slide img {
                 width: 45%;
             }
         }
+
+        @media (max-width: 480px) {
+            .header {
+                left: 5vw;
+                gap: 1vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .nav-link {
+                font-size: 4vw;
+            }
+
+            .logo-overlay {
+                top: 16vw;
+                left: 10vw;
+                width: 50vw;
+            }
+
+            .slider-wrapper {
+                bottom: 2vw;
+                width: 90vw;
+            }
+
+            .swiper-slide img {
+                width: 48%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -178,7 +206,6 @@
     </div>
 
     <div class="container">
-        <!-- Первый блок с images1 и logo2 -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
             <div class="logo-overlay">
@@ -189,10 +216,8 @@
         <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
-        <!-- Блок слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
-
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -209,23 +234,16 @@
                             <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
                         </div>
                     </div>
-
-                    <!-- Навигация -->
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
 
-        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
-        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <!-- Кнопка "Наверх" -->
     <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
-    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -241,7 +259,12 @@
                 },
             });
         });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     </script>
 
 </body>
 </html>
+
