@@ -91,7 +91,7 @@
 
         .slider-wrapper {
             position: absolute;
-            top: calc(50% + 50px); /* Сдвиг фото на 50 пикселей ниже */
+            top: calc(50% + 50px);
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
@@ -124,11 +124,14 @@
         /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-header {
             position: absolute;
-            top: 100px; /* 100px от верхнего края images4 */
+            top: 100px;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
             font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
         }
 
         .results-header div {
@@ -143,7 +146,6 @@
 
         .results-header .students {
             color: #22ECE1;
-            margin-top: 20px; /* Расстояние 20px между строками */
         }
 
         /* Адаптация под мобильные устройства */
@@ -168,7 +170,6 @@
                 width: 40vw;
             }
 
-            /* Увеличение высоты images4 только для мобильных */
             #slider-section {
                 height: 130vh;
             }
@@ -183,7 +184,6 @@
                 height: 75%;
             }
 
-            /* Вертикальное расположение фото в слайдах */
             .swiper-slide {
                 flex-direction: column;
                 gap: 20px;
@@ -194,12 +194,10 @@
                 max-height: 50%;
             }
 
+            /* Разделение "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" на мобильной версии */
             .results-header {
-                top: 100px; /* Оставляем на том же месте */
-            }
-
-            .results-header .students {
-                margin-top: 20px;
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
@@ -264,4 +262,5 @@
 
 </body>
 </html>
+
 
