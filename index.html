@@ -146,6 +146,7 @@
 
         .results-header .students {
             color: #22ECE1;
+            margin-top: 10px; /* Отступ 10px для мобильной версии */
         }
 
         /* Адаптация под мобильные устройства */
@@ -194,14 +195,9 @@
                 max-height: 50%;
             }
 
-            /* Разделение "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" на мобильной версии */
             .results-header {
                 flex-direction: column;
                 font-size: 23px; /* В 2 раза меньше */
-            }
-
-            .results-header .students {
-                margin-top: 10px; /* Добавлен отступ 10px для "ПОДОПЕЧНЫХ" */
             }
         }
     </style>
@@ -252,6 +248,7 @@
                             <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -264,6 +261,12 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper", {
+            pagination: { el: ".swiper-pagination", clickable: true },
+        });
+    </script>
+
 </body>
 </html>
-
