@@ -124,11 +124,12 @@
         /* Заголовки "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-text {
             position: absolute;
-            top: 100px;
-            left: 681px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-weight: bold;
-            font-size: 46px;
-            width: 600px;
+            font-size: 92px;
+            width: 800px;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -197,6 +198,7 @@
 
             /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" друг под другом */
             .results-text {
+                font-size: 46px;
                 flex-direction: column;
                 gap: 10px;
                 top: 80px;
