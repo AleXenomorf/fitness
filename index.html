@@ -21,7 +21,7 @@
         .header {
             position: absolute;
             top: 2.5vw;
-            left: calc(10vw - 100px);
+            left: calc(10vw - 100px); /* Сдвинуто левее */
             display: flex;
             align-items: center;
             gap: 1.5vw;
@@ -42,12 +42,11 @@
             color: black;
         }
 
-        /* Контейнер */
+        /* Основной контейнер */
         .container {
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(10, auto);
-            gap: 0;
             height: 100%;
         }
 
@@ -78,10 +77,10 @@
             object-fit: contain;
         }
 
-        /* Блок слайдера */
+        /* Секция слайдера */
         #slider-section {
             position: relative;
-            height: 110%; /* Увеличена высота блока images4 на 10% */
+            height: 110%; /* Увеличена высота image4 */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -89,7 +88,7 @@
 
         #slider-section img {
             width: 100%;
-            height: 110%; /* Увеличена высота images4 */
+            height: 110%;
             object-fit: cover;
         }
 
@@ -119,7 +118,7 @@
         }
 
         .swiper-slide img {
-            width: 36%; /* Уменьшено на 10% (было 40%) */
+            width: 36%; /* Уменьшено на 10% */
             max-height: 90%;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -171,16 +170,16 @@
             }
 
             #slider-section {
-                height: 110%;
+                height: 120%; /* Увеличена высота image4 для нормального отображения слайдов */
             }
 
             .slider-wrapper {
-                width: 90%;
-                height: 70%;
+                width: 95%;
+                height: 75%;
             }
 
             .swiper-slide img {
-                width: 40%; /* Чуть больше на мобильных */
+                width: 42%; /* Немного больше для мобильных */
             }
         }
     </style>
@@ -200,6 +199,7 @@
     </div>
 
     <div class="container">
+        <!-- Первый блок с images1 и logo2 -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
             <div class="logo-overlay">
@@ -237,14 +237,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
-        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
-
+    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
