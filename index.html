@@ -57,8 +57,8 @@
             transform: translateX(-50%);
             display: flex;
             align-items: center;
-            gap: 40px;
-            font-size: 46px;
+            gap: 80px;
+            font-size: 92px; /* В 2 раза больше */
             font-weight: bold;
             z-index: 10;
         }
@@ -82,11 +82,11 @@
 
         .slider-wrapper {
             position: absolute;
-            top: 55%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 900px;
+            width: 100%;
+            max-width: 1800px;
             height: auto;
             display: flex;
             justify-content: center;
@@ -102,11 +102,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
+            gap: 80px;
         }
 
         .swiper-slide img {
-            width: 42%;
+            width: 84%; /* В 2 раза больше */
             max-height: 100%;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -118,7 +118,11 @@
         @media (max-width: 768px) {
             .results-title {
                 top: 100px; /* Отступ 100px на моб версии */
-                font-size: 6vw;
+                font-size: 12vw;
+            }
+
+            .swiper-slide img {
+                width: 100%;
             }
         }
     </style>
@@ -196,5 +200,6 @@
 
 </body>
 </html>
+
 
 
