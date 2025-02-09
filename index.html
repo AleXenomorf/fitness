@@ -20,39 +20,40 @@
         /* Логотип + навигация */
         .header {
             position: absolute;
-            top: 2vh;
-            left: 10%;
+            top: 27px;
+            left: 370px;
             display: flex;
             align-items: center;
-            gap: 2vw;
+            gap: 20px;
             z-index: 20;
         }
 
         .logo img {
-            width: 10vw;
-            max-width: 128px;
-            height: auto;
+            width: 128px;
+            height: 96.74px;
         }
 
         .nav-link {
-            font-size: 1.2vw;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
         }
 
+        @media (max-width: 1024px) {
+            .header {
+                left: 50%;
+                transform: translateX(-50%);
+                gap: 10px;
+            }
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                left: 50%;
-                transform: translateX(-50%);
-                text-align: center;
-                gap: 10px;
-            }
-
-            .logo img {
-                width: 80px;
+                align-items: center;
+                top: 10px;
             }
 
             .nav-link {
@@ -66,7 +67,7 @@
             grid-template-columns: 1fr;
             grid-template-rows: repeat(10, auto);
             gap: 0;
-            height: 100%;
+            width: 100%;
         }
 
         .item {
@@ -76,19 +77,31 @@
 
         .item img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
         }
 
-        /* Логотип на фоне images1 */
+        /* Логотип поверх images1 */
         .logo-overlay {
             position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40vw;
-            max-width: 448px;
+            top: 194px;
+            left: 468px;
+            width: 448px;
+            height: 72px;
+        }
+
+        .logo-overlay img {
+            width: 100%;
             height: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 1024px) {
+            .logo-overlay {
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
         @media (max-width: 768px) {
@@ -108,10 +121,10 @@
         /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
-            bottom: 10%;
+            bottom: 5%;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
+            width: 50%;
             max-width: 800px;
             z-index: 10;
         }
@@ -157,14 +170,6 @@
 
         .scroll-to-top:hover {
             background: rgba(0, 0, 0, 0.7);
-        }
-
-        @media (max-width: 480px) {
-            .scroll-to-top {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
         }
     </style>
 </head>
@@ -257,5 +262,4 @@
 
 </body>
 </html>
-
 
