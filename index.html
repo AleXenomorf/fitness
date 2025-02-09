@@ -20,8 +20,8 @@
         /* Логотип + навигация */
         .header {
             position: absolute;
-            top: 27px;
-            left: 370px;
+            top: 20px;
+            left: 5%;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -29,8 +29,8 @@
         }
 
         .logo img {
-            width: 128px;
-            height: 96.74px;
+            width: 120px;
+            height: auto;
         }
 
         .nav-link {
@@ -41,11 +41,14 @@
             color: black;
         }
 
+        /* Адаптивность шапки */
         @media (max-width: 1024px) {
             .header {
                 left: 50%;
                 transform: translateX(-50%);
-                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
         }
 
@@ -66,7 +69,6 @@
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(10, auto);
-            gap: 0;
             width: 100%;
         }
 
@@ -84,10 +86,10 @@
         /* Логотип поверх images1 */
         .logo-overlay {
             position: absolute;
-            top: 194px;
-            left: 468px;
-            width: 448px;
-            height: 72px;
+            top: 15%;
+            left: 10%;
+            width: 30%;
+            max-width: 450px;
         }
 
         .logo-overlay img {
@@ -96,25 +98,27 @@
             object-fit: contain;
         }
 
+        /* Адаптивность логотипа */
         @media (max-width: 1024px) {
             .logo-overlay {
-                top: 20%;
+                top: 10%;
                 left: 50%;
                 transform: translateX(-50%);
+                width: 40%;
             }
         }
 
         @media (max-width: 768px) {
             .logo-overlay {
-                width: 60vw;
-                top: 15%;
+                width: 60%;
+                top: 8%;
             }
         }
 
         @media (max-width: 480px) {
             .logo-overlay {
-                width: 70vw;
-                top: 10%;
+                width: 70%;
+                top: 5%;
             }
         }
 
