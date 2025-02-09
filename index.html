@@ -79,6 +79,20 @@
         }
 
         /* Блок слайдера */
+        #slider-section {
+            position: relative;
+            height: 110%; /* Увеличена высота блока images4 на 10% */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #slider-section img {
+            width: 100%;
+            height: 110%; /* Увеличена высота images4 */
+            object-fit: cover;
+        }
+
         .slider-wrapper {
             position: absolute;
             top: 50%;
@@ -156,6 +170,10 @@
                 width: 40vw;
             }
 
+            #slider-section {
+                height: 110%; /* Сохранено увеличение на 10% */
+            }
+
             .slider-wrapper {
                 width: 90%;
                 height: 70%;
@@ -182,7 +200,6 @@
     </div>
 
     <div class="container">
-        <!-- Первый блок с images1 и logo2 -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
             <div class="logo-overlay">
@@ -195,7 +212,7 @@
 
         <!-- Блок слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
 
             <div class="slider-wrapper">
                 <div class="swiper">
@@ -226,10 +243,8 @@
         <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <!-- Кнопка "Наверх" -->
     <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
-    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -249,3 +264,4 @@
 
 </body>
 </html>
+
