@@ -124,29 +124,6 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Кнопка наверх */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 24px;
-            text-align: center;
-            line-height: 50px;
-            display: none;
-            z-index: 100;
-        }
-
-        .scroll-to-top:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
         /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
             .header {
@@ -170,7 +147,7 @@
             }
 
             #slider-section {
-                height: 120%; /* Увеличена высота image4 для нормального отображения слайдов */
+                height: 120%; /* Увеличена высота image4 для полной видимости слайдов */
             }
 
             .slider-wrapper {
@@ -179,7 +156,7 @@
             }
 
             .swiper-slide img {
-                width: 42%; /* Немного больше для мобильных */
+                width: 42%; /* Немного больше, чтобы хорошо смотрелось */
             }
         }
     </style>
