@@ -68,7 +68,6 @@
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            transform: scale(1.6); /* Оставляем фото в обычном размере для десктопа */
         }
 
         .swiper-slide img {
@@ -101,6 +100,7 @@
             #slider-section img {
                 height: 300%;
                 object-fit: cover;
+                width: 100%;
             }
 
             .slider-wrapper {
@@ -112,11 +112,11 @@
             .swiper-slide {
                 flex-direction: column;
                 gap: 10px;
-                transform: scale(0.5); /* Уменьшаем фото в слайдах в 2 раза для мобилок */
             }
 
             .swiper-slide img {
-                width: 100%;
+                width: 50%; /* Уменьшаем слайды в 2 раза */
+                margin: 0 auto;
             }
         }
     </style>
