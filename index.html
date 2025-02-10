@@ -56,64 +56,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фитнес сайт</title>
-
-    <!-- Подключаем Swiper.js (слайдер) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        /* Логотип + навигация */
-        .header {
-            position: absolute;
-            top: 2.5vw;
-            left: calc(10vw - 100px);
-            display: flex;
-            align-items: center;
-            gap: 1.5vw;
-            z-index: 20;
-        }
-
-        .logo img {
-            width: 8vw;
-            height: auto;
-        }
-
-        .nav-link {
-            font-size: 1.2vw;
-            font-weight: bold;
-            text-decoration: none;
-            color: black;
-        }
-
-        /* Контейнер */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(10, auto);
-        }
-
-        .item {
-            width: 100%;
-            position: relative;
-        }
-
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         /* Логотип на images1 */
@@ -133,11 +75,12 @@
         .results-text {
             position: absolute;
             top: 30px;
-            left: 50%;
+            left: calc(50% - 50px); /* Смещение влево на 50px */
             transform: translateX(-50%);
             font-weight: bold;
-            font-size: 46px;
-            width: 400px;
+            font-size: 3vw; /* Относительный размер шрифта */
+            width: 100%;
+            max-width: 400px;
             text-align: center;
             display: flex;
             gap: 15px;
@@ -212,11 +155,26 @@
 
         /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
+            .header {
+                top: 5vw;
+                left: 5vw;
+                gap: 3vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .nav-link {
+                font-size: 3vw;
+            }
+
             .results-text {
-                font-size: 23px;
+                font-size: 5vw;
+                top: 20px;
+                left: calc(50% - 50px); /* Смещение влево на 50px */
                 flex-direction: column;
                 gap: 5px;
-                top: 20px;
             }
 
             .slider-wrapper {
