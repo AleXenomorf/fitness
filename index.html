@@ -24,7 +24,7 @@
         /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-text {
             position: absolute;
-            top: 30px;
+            top: 30px; /* Оставил без изменений */
             left: 50%;
             transform: translateX(-50%);
             font-weight: bold;
@@ -34,7 +34,6 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            z-index: 10;
         }
 
         .results-text span {
@@ -51,34 +50,30 @@
 
         /* Контейнер для слайдов */
         .slider-wrapper {
-    position: absolute;
-    top: 450px; /* Было 200px, опустил на 50px */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 1200px;
-}
+            position: absolute;
+            top: 250px; /* Опустил слайды на 50px */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 1200px;
+        }
 
         .swiper {
             width: 100%;
+            overflow: hidden; /* Чтобы элементы не выходили за границы */
         }
 
         .swiper-slide {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Увеличил отступ между фото */
+            transform: scale(1.5); /* Увеличил весь слайд на 50% */
         }
 
         .swiper-slide img {
-    width: 72% !important; /* Было 48%, увеличил на 50% */
-    border-radius: 10px;
-}
-
-
-        /* Возвращаем размеры images5-10 */
-        .item img {
-            width: 100%;
-            height: auto;
+            width: 48%; /* Оставил прежний размер картинок, так как scale(1.5) увеличивает их автоматически */
+            border-radius: 10px;
         }
 
         /* Адаптация под мобильные устройства */
@@ -87,16 +82,13 @@
                 font-size: 46px;
                 flex-direction: column;
                 gap: 20px;
-                top: 30px;
-            }
-
-            .slider-wrapper {
-                top: 110px;
+                top: 80px;
             }
 
             .swiper-slide {
                 flex-direction: column;
                 gap: 20px;
+                transform: scale(1); /* Убираем увеличение на мобильных */
             }
 
             .swiper-slide img {
@@ -112,9 +104,8 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
-
-        <!-- images4 с заголовком и слайдером -->
-        <div class="item" id="slider-section" style="position: relative;">
+        
+        <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
 
             <div class="results-text">
@@ -142,7 +133,7 @@
             </div>
         </div>
 
-        <!-- Дополнительные изображения (размеры как раньше) -->
+        <!-- Дополнительные изображения -->
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
@@ -167,3 +158,4 @@
 
 </body>
 </html>
+
