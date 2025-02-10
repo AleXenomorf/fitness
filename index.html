@@ -54,7 +54,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1.6); /* Уменьшил размер на 20% (было 2, стало 1.6) */
+            transform: translate(-50%, -50%) scale(1.6);
             width: 80%;
             max-width: 1200px;
             z-index: 10;
@@ -90,9 +90,17 @@
                 top: 30px;
             }
 
+            /* Увеличиваем images4 в высоту в 2 раза */
+            #slider-section img {
+                width: 100%;
+                height: 200%; /* Растягиваем в 2 раза по высоте */
+                object-fit: cover; /* Чтобы картинка не теряла пропорции */
+            }
+
+            /* Уменьшаем слайды в 2 раза */
             .slider-wrapper {
                 top: 50%;
-                transform: translate(-50%, -50%) scale(1); /* На мобильных без увеличения */
+                transform: translate(-50%, -50%) scale(0.8);
                 width: 80%;
                 max-width: 1200px;
             }
@@ -170,3 +178,4 @@
 
 </body>
 </html>
+
