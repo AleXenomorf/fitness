@@ -107,6 +107,7 @@
                 gap: 0;
                 align-items: center;
                 position: relative;
+                height: auto; /* Подстроить под фото */
             }
 
             /* Уменьшаем фото в 3 раза, но оставляем их плотно друг к другу */
@@ -114,23 +115,18 @@
                 width: 100%;
                 transform: scale(0.33);
                 border-radius: 10px;
-                margin: -20px 0;
+                margin: 0;
                 padding: 0;
             }
 
-            /* Первый контейнер остается без изменений */
-            .swiper-slide:nth-child(1) {
-                margin-top: 0;
+            /* Уменьшаем высоту контейнера слайдов под размер фото */
+            .swiper-slide {
+                height: calc(100% * 0.33);
             }
 
-            /* Второй контейнер поднят выше */
+            /* Поднимаем второй контейнер выше */
             .swiper-slide:nth-child(2) {
-                margin-top: -100px;
-            }
-
-            /* Третий контейнер также немного опущен */
-            .swiper-slide:nth-child(3) {
-                margin-top: 200px;
+                margin-top: -150px;
             }
         }
     </style>
@@ -197,5 +193,3 @@
 
 </body>
 </html>
-
-
