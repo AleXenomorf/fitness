@@ -52,9 +52,9 @@
         /* Контейнер для слайдов */
         .slider-wrapper {
             position: absolute;
-            top: 50%; /* Центрируем слайды по вертикали */
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Центрирование по X и Y */
+            transform: translate(-50%, -50%) scale(2); /* Увеличиваем слайды в 2 раза */
             width: 80%;
             max-width: 1200px;
             z-index: 10;
@@ -92,7 +92,7 @@
 
             .slider-wrapper {
                 top: 50%;
-                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%) scale(1); /* На мобильных без увеличения */
                 width: 80%;
                 max-width: 1200px;
             }
