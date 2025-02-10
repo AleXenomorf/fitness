@@ -153,7 +153,41 @@
         }
 
         /* Адаптация под мобильные устройства */
+        @media (max-width: 1024px) {
+            /* Скрываем надписи на images1 */
+            .header .nav-link {
+                display: none;
+            }
+
+            /* Сдвигаем логотип вправо */
+            .header {
+                left: 10vw; /* Сдвиг вправо */
+            }
+
+            /* Уменьшаем размер логотипа */
+            .logo img {
+                width: 12vw;
+            }
+
+            /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+            .results-text {
+                font-size: 3.5vw;
+                top: 15px;
+            }
+
+            /* Адаптация слайдера */
+            .slider-wrapper {
+                width: 90%;
+                height: 70%;
+            }
+
+            .swiper-slide img {
+                width: 45%;
+            }
+        }
+
         @media (max-width: 768px) {
+            /* Дополнительные стили для мобильных устройств */
             .header {
                 top: 5vw;
                 left: 5vw;
@@ -164,22 +198,18 @@
                 width: 15vw;
             }
 
-            .nav-link {
-                font-size: 3vw;
-            }
-
             .results-text {
                 font-size: 4vw; /* Увеличенный размер шрифта для мобильных */
                 top: 10px; /* Меньшее расстояние сверху для мобильных */
             }
 
             .slider-wrapper {
-                width: 90%;
-                height: 70%;
+                width: 95%;
+                height: 60%;
             }
 
             .swiper-slide img {
-                width: 45%;
+                width: 50%;
             }
 
             .scroll-to-top {
