@@ -75,11 +75,11 @@
         .results-text {
             position: absolute;
             top: 30px;
-            left: 50%;
+            left: calc(50% - 200px); /* Сдвинул влево на 200px */
             transform: translateX(-50%);
             font-weight: bold;
-            font-size: 46px; /* Было 92px */
-            width: 400px; /* Было 800px */
+            font-size: 46px;
+            width: 400px;
             text-align: center;
             display: flex;
             gap: 15px;
@@ -88,6 +88,39 @@
 
         .results { color: #FFFFFF; }
         .students { color: #22ECE1; }
+
+        /* Слайдер */
+        .slider-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .swiper-slide img {
+            width: 40%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
         /* Кнопка "Наверх" */
         .scroll-to-top {
@@ -115,6 +148,15 @@
                 flex-direction: column;
                 gap: 5px;
                 top: 20px;
+            }
+
+            .slider-wrapper {
+                width: 90%;
+                height: 70%;
+            }
+
+            .swiper-slide img {
+                width: 45%;
             }
 
             .scroll-to-top {
@@ -159,6 +201,26 @@
                 <span class="results">РЕЗУЛЬТАТЫ</span>
                 <span class="students">ПОДОПЕЧНЫХ</span>
             </div>
+
+            <!-- Слайдер -->
+            <div class="slider-wrapper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
+                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
+                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
+                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
@@ -176,11 +238,7 @@
         const scrollToTopBtn = document.getElementById("scrollToTop");
 
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
+            scrollToTopBtn.classList.toggle("show", window.scrollY > 300);
         });
 
         scrollToTopBtn.addEventListener("click", () => {
@@ -190,3 +248,4 @@
 
 </body>
 </html>
+
