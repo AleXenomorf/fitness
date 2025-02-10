@@ -26,6 +26,7 @@
             align-items: center;
             gap: 1.5vw;
             z-index: 20;
+            transform-origin: top left;
         }
 
         .logo img {
@@ -36,6 +37,7 @@
         .nav-link {
             font-size: 1.2vw;
             font-weight: bold;
+            cursor: pointer;
             text-decoration: none;
             color: black;
         }
@@ -46,6 +48,7 @@
             grid-template-columns: 1fr;
             grid-template-rows: repeat(10, auto);
             gap: 0;
+            height: 100%;
         }
 
         .item {
@@ -79,6 +82,7 @@
             position: absolute;
             top: 30px;
             left: calc(50% - 100px);
+            transform: translateX(-50%);
             font-weight: bold;
             font-size: 46px;
             width: 800px;
@@ -87,6 +91,10 @@
             justify-content: center;
             gap: 30px;
             z-index: 10;
+        }
+
+        .results-text span {
+            white-space: nowrap;
         }
 
         .results {
@@ -153,6 +161,44 @@
             background: rgba(0, 0, 0, 0.7);
         }
 
+        /* Адаптация под мобильные устройства */
+        @media (max-width: 768px) {
+            .header {
+                left: calc(5vw - 100px);
+                top: 4vw;
+                transform: scale(0.8);
+            }
+
+            .logo img {
+                width: 10vw;
+            }
+
+            .nav-link {
+                font-size: 2.5vw;
+            }
+
+            .logo-overlay {
+                top: 20vw;
+                left: calc(5vw - 100px);
+                width: 40vw;
+            }
+
+            .results-text {
+                font-size: 30px;
+                flex-direction: column;
+                gap: 10px;
+                top: 20px;
+            }
+
+            .slider-wrapper {
+                width: 90%;
+                height: 70%;
+            }
+
+            .swiper-slide img {
+                width: 45%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -170,6 +216,7 @@
     </div>
 
     <div class="container">
+        <!-- Первый блок с images1 и logo2 -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
             <div class="logo-overlay">
@@ -182,7 +229,7 @@
 
         <!-- Блок слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
 
             <!-- Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" -->
             <div class="results-text">
@@ -201,16 +248,9 @@
             </div>
         </div>
 
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
-    </div>
+        <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
-    <!-- Кнопка наверх -->
-    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
@@ -219,3 +259,4 @@
 
 </body>
 </html>
+
