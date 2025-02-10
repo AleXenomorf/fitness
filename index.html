@@ -113,15 +113,17 @@
             .swiper-slide {
                 flex-direction: column;
                 align-items: center;
-                gap: 0px; /* Убираем расстояние между картинками */
+                gap: 0; /* Убираем расстояние между слайдами */
+                line-height: 0; /* Убираем возможные отступы */
             }
 
-            /* Уменьшаем фото в 3 раза и оставляем плотно друг к другу */
+            /* Уменьшаем слайды в 3 раза и убираем отступы */
             .swiper-slide img {
-                width: 100%;
+                width: 33.3%;
                 transform: scale(0.33);
                 border-radius: 10px;
-                margin: -12px 0; /* Сближаем фото */
+                margin: 0; /* Убираем отступы */
+                display: block;
             }
         }
     </style>
@@ -129,12 +131,10 @@
 <body>
 
     <div class="container">
-        <!-- Основные изображения -->
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
-        <!-- images4 с заголовком и слайдером -->
         <div class="item" id="slider-section" style="position: relative;">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
 
@@ -163,7 +163,6 @@
             </div>
         </div>
 
-        <!-- Дополнительные изображения -->
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
@@ -172,7 +171,6 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <!-- Подключение Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
