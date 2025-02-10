@@ -91,7 +91,7 @@
         @media (max-width: 768px) {
             /* Уменьшаем текст в 3 раза */
             .results-text {
-                font-size: 30px; /* Уменьшили в 3 раза (92px / 3 ≈ 30px) */
+                font-size: 30px;
                 flex-direction: column;
                 gap: 10px;
                 top: 20px;
@@ -99,7 +99,7 @@
 
             /* Растягиваем images4 в 5 раз по высоте */
             #slider-section img {
-                height: 500%; /* Растягиваем в 5 раз */
+                height: 500%;
                 object-fit: cover;
                 width: 100%;
             }
@@ -112,16 +112,22 @@
 
             .swiper-slide {
                 flex-direction: column;
+                gap: 0;
                 align-items: center;
             }
 
-            /* Уменьшаем слайды в 3 раза и ставим их плотно друг под другом */
+            /* Уменьшаем слайды в 3 раза */
             .swiper-slide img {
-                width: 33.3%; /* Уменьшаем в 3 раза */
-                margin: 0;
-                padding: 0;
+                width: auto;
+                transform: scale(0.33);
                 border-radius: 10px;
-                display: block;
+                margin: 0;
+            }
+
+            /* Позиционируем слайды на images4 */
+            .slider-wrapper {
+                top: 40%;
+                transform: translate(-50%, -40%);
             }
         }
     </style>
@@ -188,5 +194,4 @@
 
 </body>
 </html>
-
 
