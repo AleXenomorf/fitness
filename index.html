@@ -81,7 +81,7 @@
             height: auto;
         }
 
-        /* images5-10 (возвращаем их размеры) */
+        /* images5-10 */
         .item img {
             width: 100%;
             height: auto;
@@ -111,24 +111,15 @@
             }
 
             .swiper-slide {
-                display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 0; /* Убираем расстояние */
-                line-height: 0; /* Исключаем возможные пробелы */
+                gap: 0; /* Убираем расстояние между картинками */
             }
 
-            /* Уменьшаем слайды в 3 раза, но они вплотную друг к другу */
+            /* Уменьшаем слайды в 3 раза без обрезки */
             .swiper-slide img {
-                width: 100%;
-                transform: scale(0.33);
+                width: 33.3%; /* Уменьшаем в 3 раза */
                 border-radius: 10px;
-            }
-
-            /* Позиционируем слайды поверх images4 */
-            .slider-wrapper {
-                top: 40%;
-                transform: translate(-50%, -40%);
             }
         }
     </style>
@@ -170,7 +161,7 @@
             </div>
         </div>
 
-        <!-- Дополнительные изображения (размеры как раньше) -->
+        <!-- Дополнительные изображения -->
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
@@ -195,6 +186,4 @@
 
 </body>
 </html>
-
-
 
