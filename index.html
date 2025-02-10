@@ -67,24 +67,18 @@
         .swiper-slide {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 0;
+            align-items: center;
+            position: relative;
+            height: auto;
         }
 
         .swiper-slide img {
-            width: 48%;
+            width: 100%;
+            transform: scale(0.33);
             border-radius: 10px;
-        }
-
-        /* images4 */
-        #slider-section img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* images5-10 */
-        .item img {
-            width: 100%;
-            height: auto;
+            margin: 0;
+            padding: 0;
         }
 
         /* Адаптация под мобильные устройства */
@@ -107,26 +101,18 @@
                 gap: 0;
                 align-items: center;
                 position: relative;
-                height: auto; /* Подстроить под фото */
-            }
-
-            /* Уменьшаем фото в 3 раза, но оставляем их плотно друг к другу */
-            .swiper-slide img {
-                width: 100%;
-                transform: scale(0.33);
-                border-radius: 10px;
+                height: calc(100% * 0.33);
                 margin: 0;
                 padding: 0;
             }
 
-            /* Уменьшаем высоту контейнера слайдов под размер фото */
-            .swiper-slide {
-                height: calc(100% * 0.33);
+            /* Полное наложение контейнеров */
+            .swiper-slide:nth-child(2) {
+                margin-top: -200px;
             }
 
-            /* Поднимаем второй контейнер выше */
-            .swiper-slide:nth-child(2) {
-                margin-top: -150px;
+            .swiper-slide:nth-child(3) {
+                margin-top: -200px;
             }
         }
     </style>
@@ -134,12 +120,6 @@
 <body>
 
     <div class="container">
-        <!-- Основные изображения -->
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
-
-        <!-- images4 с заголовком и слайдером -->
         <div class="item" id="slider-section" style="position: relative;">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
 
@@ -167,17 +147,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- Дополнительные изображения -->
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
-    <!-- Подключение Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
