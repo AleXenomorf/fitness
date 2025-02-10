@@ -75,7 +75,7 @@
             border-radius: 10px;
         }
 
-        /* images4 */
+        /* images4 (ВОЗВРАЩАЕМ В ИСХОДНЫЙ РАЗМЕР) */
         #slider-section img {
             width: 100%;
             height: auto;
@@ -96,9 +96,9 @@
                 top: 20px;
             }
 
-            /* Растягиваем images4 в 5 раз по высоте */
+            /* УБИРАЕМ РАСТЯЖЕНИЕ images4 */
             #slider-section img {
-                height: 500%;
+                height: auto;
                 object-fit: cover;
                 width: 100%;
             }
@@ -111,16 +111,16 @@
 
             .swiper-slide {
                 flex-direction: column;
-                gap: 0; /* Убираем расстояние между слайдами */
+                gap: 0; /* Убираем расстояние между фото */
                 align-items: center;
             }
 
-            /* Уменьшаем слайды в 3 раза и ставим их плотно друг к другу */
+            /* Уменьшаем фото в 3 раза, но оставляем их плотно друг к другу */
             .swiper-slide img {
                 width: 100%;
                 transform: scale(0.33);
                 border-radius: 10px;
-                margin: 0; /* Убираем отступы */
+                margin: -5px 0; /* Чуть поднимаем, чтобы не было зазоров */
                 padding: 0;
             }
         }
@@ -188,3 +188,4 @@
 
 </body>
 </html>
+
