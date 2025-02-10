@@ -67,7 +67,7 @@
         .swiper-slide {
             display: flex;
             justify-content: space-between;
-            gap: 5px; /* Уменьшили расстояние между слайдами */
+            gap: 20px;
         }
 
         .swiper-slide img {
@@ -112,7 +112,7 @@
 
             .swiper-slide {
                 flex-direction: column;
-                gap: 5px; /* Уменьшаем расстояние между слайдами */
+                gap: 5px; /* Уменьшаем расстояние между слайдами до 5px */
                 align-items: center;
             }
 
@@ -121,7 +121,7 @@
                 width: 50%; /* Уменьшаем ширину слайдов в 2 раза */
                 transform: scale(0.5); /* Масштабируем слайды */
                 border-radius: 10px;
-                margin-bottom: 5px; /* Расстояние между слайдами */
+                margin-bottom: 5px; /* Уменьшаем расстояние между слайдами до 5px */
             }
 
             /* Позиционируем слайды поверх images4 */
@@ -183,7 +183,7 @@
     <script>
         const swiper = new Swiper('.swiper', {
             slidesPerView: 1,
-            spaceBetween: 5, /* Уменьшили расстояние между слайдами */
+            spaceBetween: 20,
             loop: true,
             autoplay: {
                 delay: 3000,
@@ -194,5 +194,3 @@
 
 </body>
 </html>
-
-
