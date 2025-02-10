@@ -75,13 +75,7 @@
             border-radius: 10px;
         }
 
-        /* images4 */
-        #slider-section img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* images5-10 (возвращаем их размеры) */
+        /* Возвращаем размеры images5-10 */
         .item img {
             width: 100%;
             height: auto;
@@ -96,37 +90,24 @@
                 top: 30px;
             }
 
-            /* Увеличиваем images4 в 3 раза по высоте */
+            /* Растягиваем images4 в 3 раза по высоте */
             #slider-section img {
                 height: 300%;
                 object-fit: cover;
-                width: 100%;
             }
 
             .slider-wrapper {
-                width: 90%;
+                position: absolute;
                 top: 50%;
+                left: 50%;
                 transform: translate(-50%, -50%);
+                width: 80%;
+                max-width: 1200px;
             }
 
-            .swiper-slide {
-                flex-direction: column;
-                gap: 10px; /* Уменьшаем расстояние между слайдами */
-                align-items: center;
-            }
-
-            /* Уменьшаем слайды и накладываем их на images4 */
+            /* Уменьшаем слайды в 2 раза */
             .swiper-slide img {
-                width: 60%; /* Уменьшаем ширину слайдов */
-                transform: scale(0.8); /* Масштабируем слайды */
-                border-radius: 10px;
-                margin-bottom: 10px; /* Расстояние между слайдами */
-            }
-
-            /* Позиционируем слайды поверх images4 */
-            .slider-wrapper {
-                top: 40%; /* Сдвигаем слайды выше */
-                transform: translate(-50%, -40%);
+                width: 24%; /* Было 48%, уменьшил в 2 раза */
             }
         }
     </style>
