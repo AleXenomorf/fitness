@@ -67,18 +67,14 @@
         .swiper-slide {
             display: flex;
             justify-content: space-between;
-            gap: 0;
             align-items: center;
             position: relative;
-            height: auto;
+            gap: 20px;
         }
 
         .swiper-slide img {
-            width: 100%;
-            transform: scale(0.33);
+            width: 48%;
             border-radius: 10px;
-            margin: 0;
-            padding: 0;
         }
 
         /* images4 */
@@ -110,11 +106,16 @@
 
             .swiper-slide {
                 flex-direction: column;
-                gap: 0;
                 align-items: center;
                 position: relative;
-                height: calc(100% * 0.33);
-                margin: 0;
+                gap: 0;
+            }
+
+            /* Уменьшаем фото в 3 раза и убираем зазоры */
+            .swiper-slide img {
+                width: 100%;
+                transform: scale(0.33);
+                margin: -10px 0; /* Плотное расположение */
                 padding: 0;
             }
 
