@@ -81,7 +81,7 @@
             height: auto;
         }
 
-        /* images5-10 (возвращаем их размеры) */
+        /* images5-10 */
         .item img {
             width: 100%;
             height: auto;
@@ -89,9 +89,8 @@
 
         /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
-            /* Уменьшаем текст в 3 раза */
             .results-text {
-                font-size: 30px; /* Уменьшили в 3 раза (92px / 3 ≈ 30px) */
+                font-size: 30px;
                 flex-direction: column;
                 gap: 10px;
                 top: 20px;
@@ -99,7 +98,7 @@
 
             /* Растягиваем images4 в 5 раз по высоте */
             #slider-section img {
-                height: 500%; /* Растягиваем в 5 раз */
+                height: 500%;
                 object-fit: cover;
                 width: 100%;
             }
@@ -116,18 +115,13 @@
                 align-items: center;
             }
 
-            /* Уменьшаем слайды в 2 раза и убираем все отступы */
+            /* Уменьшаем слайды в 3 раза и ставим их плотно друг к другу */
             .swiper-slide img {
-                width: 50%; /* Уменьшаем ширину слайдов в 2 раза */
-                height: auto; /* Автоматическая высота */
+                width: 100%;
+                transform: scale(0.33);
                 border-radius: 10px;
-                margin-bottom: 0; /* Убираем отступы между слайдами */
-            }
-
-            /* Позиционируем слайды поверх images4 */
-            .slider-wrapper {
-                top: 40%; /* Сдвигаем слайды выше */
-                transform: translate(-50%, -40%);
+                margin: 0; /* Убираем отступы */
+                padding: 0;
             }
         }
     </style>
@@ -169,7 +163,7 @@
             </div>
         </div>
 
-        <!-- Дополнительные изображения (размеры как раньше) -->
+        <!-- Дополнительные изображения -->
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
@@ -183,7 +177,7 @@
     <script>
         const swiper = new Swiper('.swiper', {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 0,
             loop: true,
             autoplay: {
                 delay: 3000,
