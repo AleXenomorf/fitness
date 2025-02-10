@@ -111,14 +111,15 @@
 
             .swiper-slide {
                 flex-direction: column;
-                gap: 10px;
+                gap: 20px;
+                align-items: center;
             }
 
-            /* Уменьшаем слайды ещё сильнее для мобильной версии */
+            /* Уменьшаем слайды в 2 раза (просто масштабируем) */
             .swiper-slide img {
-                width: 40%;
-                max-height: 150px;
-                margin: 0 auto;
+                width: 24%;
+                transform: scale(0.5);
+                border-radius: 10px;
             }
         }
     </style>
