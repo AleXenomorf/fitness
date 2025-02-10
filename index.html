@@ -118,14 +118,19 @@
                 padding: 0;
             }
 
-            /* Первый контейнер опущен еще в 3 раза ниже */
-            .swiper-slide:nth-child(2) {
-                transform: translateY(115200px);
+            /* Первый контейнер остается на месте */
+            .swiper-slide:nth-child(1) {
+                margin-top: 0;
             }
 
-            /* Второй контейнер поднят в 3 раза выше */
+            /* Второй контейнер опускаем немного */
+            .swiper-slide:nth-child(2) {
+                margin-top: 100px;
+            }
+
+            /* Третий контейнер также немного опускаем */
             .swiper-slide:nth-child(3) {
-                transform: translateY(-300px);
+                margin-top: 200px;
             }
         }
     </style>
