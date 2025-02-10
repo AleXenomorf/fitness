@@ -24,7 +24,7 @@
         /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-text {
             position: absolute;
-            top: 30px; /* Поднял вверх с отступом 30px */
+            top: 30px; /* Отступ 30px от верха images4 */
             left: 50%;
             transform: translateX(-50%);
             font-weight: bold;
@@ -34,6 +34,7 @@
             display: flex;
             justify-content: center;
             gap: 30px;
+            z-index: 10;
         }
 
         .results-text span {
@@ -51,11 +52,12 @@
         /* Контейнер для слайдов */
         .slider-wrapper {
             position: absolute;
-            top: 200px; /* Отодвинул вниз */
+            top: 140px; /* Отступ 30px от заголовка */
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
             max-width: 1200px;
+            z-index: 10;
         }
 
         .swiper {
@@ -79,7 +81,11 @@
                 font-size: 46px;
                 flex-direction: column;
                 gap: 20px;
-                top: 80px; /* Без изменений */
+                top: 30px; /* Отступ 30px */
+            }
+
+            .slider-wrapper {
+                top: 110px; /* Отступ 30px от заголовка */
             }
 
             .swiper-slide {
@@ -100,7 +106,9 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
-        <div class="item" id="slider-section">
+
+        <!-- images4 с заголовком и слайдером -->
+        <div class="item" id="slider-section" style="position: relative;">
             <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
 
             <div class="results-text">
