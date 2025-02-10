@@ -21,6 +21,22 @@
             width: 100%;
         }
 
+        /* Вернул логотипы и надписи на images1 */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 100px;
+        }
+
+        .title {
+            position: absolute;
+            top: 30px;
+            left: 200px;
+            font-size: 24px;
+            color: white;
+        }
+
         /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-text {
             position: absolute;
@@ -67,8 +83,6 @@
         .swiper-slide {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            position: relative;
             gap: 20px;
         }
 
@@ -106,26 +120,18 @@
 
             .swiper-slide {
                 flex-direction: column;
+                gap: 0;
                 align-items: center;
                 position: relative;
-                gap: 0;
             }
 
-            /* Уменьшаем фото в 3 раза и убираем зазоры */
+            /* Увеличил фото в 1.5 раза относительно прошлого уменьшенного размера */
             .swiper-slide img {
                 width: 100%;
-                transform: scale(0.33);
-                margin: -10px 0; /* Плотное расположение */
+                transform: scale(0.5);
+                border-radius: 10px;
+                margin: -10px 0;
                 padding: 0;
-            }
-
-            /* Полное наложение контейнеров */
-            .swiper-slide:nth-child(2) {
-                margin-top: -300px;
-            }
-
-            .swiper-slide:nth-child(3) {
-                margin-top: -300px;
             }
         }
     </style>
@@ -134,7 +140,11 @@
 
     <div class="container">
         <!-- Основные изображения -->
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+            <img src="https://alexenomorf.github.io/fitness/logo.png" alt="Logo" class="logo">
+            <div class="title">Фитнес клуб</div>
+        </div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
