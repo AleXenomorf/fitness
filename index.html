@@ -54,7 +54,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1.6); /* Обычная версия */
             width: 80%;
             max-width: 1200px;
             z-index: 10;
@@ -93,13 +93,13 @@
             /* Увеличиваем images4 в высоту в 2 раза */
             #slider-section img {
                 width: 100%;
-                height: 500%;
+                height: 200%;
                 object-fit: cover;
             }
 
-            /* Уменьшаем слайды в 2 раза */
+            /* Уменьшаем слайды в 2 раза на моб версии */
             .slider-wrapper {
-                transform: translate(-50%, -50%) scale(0.5);
+                transform: translate(-50%, -50%) scale(0.8);
             }
 
             .swiper-slide {
@@ -175,3 +175,4 @@
 
 </body>
 </html>
+
