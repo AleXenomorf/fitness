@@ -114,11 +114,16 @@
                 width: 100%;
                 transform: scale(0.33);
                 border-radius: 10px;
-                margin: -20px 0; /* Убираем зазоры */
+                margin: -20px 0;
                 padding: 0;
             }
 
-            /* ЕЩЁ БОЛЬШЕЕ ПЕРЕКРЫТИЕ КОНТЕЙНЕРОВ */
+            /* Опускаем первый контейнер в 2 раза ниже */
+            .swiper-slide:first-child {
+                margin-top: 200px;
+            }
+
+            /* Перекрытие контейнеров для сближения фото */
             .swiper-slide:nth-child(2) {
                 margin-top: -800px;
             }
@@ -191,4 +196,5 @@
 
 </body>
 </html>
+
 
