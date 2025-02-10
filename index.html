@@ -116,14 +116,14 @@
                 gap: 0;
             }
 
-            /* ✅ Уменьшаем фото в 3 раза без обрезки и плотно друг к другу */
+            /* ✅ Уменьшаем фото в 3 раза без обрезки и делаем их ПЛОТНО друг к другу */
             .swiper-slide img {
                 width: auto;
                 height: auto;
                 transform: scale(0.33);
                 object-fit: contain;
                 border-radius: 10px;
-                margin: 0;
+                margin: -10px 0; /* Сокращаем расстояние между фото */
                 padding: 0;
             }
         }
@@ -191,3 +191,4 @@
 
 </body>
 </html>
+
