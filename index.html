@@ -112,22 +112,15 @@
 
             .swiper-slide {
                 flex-direction: column;
-                gap: 0;
                 align-items: center;
+                gap: 0; /* Убираем расстояние между картинками */
             }
 
-            /* Уменьшаем слайды в 3 раза */
+            /* Уменьшаем фото в 3 раза и ставим плотно друг под другом */
             .swiper-slide img {
-                width: auto;
+                width: 50%;
                 transform: scale(0.33);
-                border-radius: 10px;
-                margin: 0;
-            }
-
-            /* Позиционируем слайды на images4 */
-            .slider-wrapper {
-                top: 40%;
-                transform: translate(-50%, -40%);
+                margin: 0; /* Убираем отступы */
             }
         }
     </style>
@@ -194,4 +187,3 @@
 
 </body>
 </html>
-
