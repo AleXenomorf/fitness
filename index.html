@@ -25,6 +25,33 @@
         .results-text {
             position: absolute;
             top: 30px; /* Оставил без изменений */
+            left: 50%;<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фитнес сайт</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Заголовок "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+        .results-text {
+            position: absolute;
+            top: 30px; /* Оставил без изменений */
             left: 50%;
             transform: translateX(-50%);
             font-weight: bold;
@@ -51,7 +78,7 @@
         /* Контейнер для слайдов */
         .slider-wrapper {
             position: absolute;
-            top: 250px; /* Опустил слайды на 50px */
+            top: 200px; /* Вернул слайды на место */
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
@@ -60,19 +87,19 @@
 
         .swiper {
             width: 100%;
-            overflow: hidden; /* Чтобы элементы не выходили за границы */
+            overflow: hidden;
         }
 
         .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px; /* Увеличил отступ между фото */
-            transform: scale(1.5); /* Увеличил весь слайд на 50% */
+            gap: 30px;
+            transform: scale(2); /* Увеличил слайды в 2 раза */
         }
 
         .swiper-slide img {
-            width: 48%; /* Оставил прежний размер картинок, так как scale(1.5) увеличивает их автоматически */
+            width: 48%;
             border-radius: 10px;
         }
 
@@ -88,7 +115,7 @@
             .swiper-slide {
                 flex-direction: column;
                 gap: 20px;
-                transform: scale(1); /* Убираем увеличение на мобильных */
+                transform: scale(1); /* Отключил увеличение на мобильных */
             }
 
             .swiper-slide img {
@@ -158,4 +185,3 @@
 
 </body>
 </html>
-
