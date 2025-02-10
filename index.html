@@ -75,7 +75,7 @@
         .results-text {
             position: absolute;
             top: 30px;
-            left: calc(50% - 10px); /* Смещение влево на 100px */
+            left: calc(50% - 100px); /* Смещение влево на 100px */
             transform: translateX(-50%);
             font-weight: bold;
             font-size: 1.5vw; /* Уменьшенный размер шрифта */
@@ -270,6 +270,10 @@
         // Инициализация Swiper
         const swiper = new Swiper('.swiper', {
             loop: true,
+            autoplay: {
+                delay: 3000, // Задержка между слайдами (3 секунды)
+                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
