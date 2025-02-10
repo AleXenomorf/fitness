@@ -111,20 +111,24 @@
             }
 
             .swiper-slide {
+                display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 0;
+                gap: 0; /* Убираем расстояние */
+                line-height: 0; /* Исключаем возможные пробелы */
             }
 
-            /* ✅ Уменьшаем фото в 3 раза без обрезки и делаем их ПЛОТНО друг к другу */
+            /* Уменьшаем слайды в 3 раза, но они вплотную друг к другу */
             .swiper-slide img {
-                width: auto;
-                height: auto;
+                width: 100%;
                 transform: scale(0.33);
-                object-fit: contain;
                 border-radius: 10px;
-                margin: -10px 0; /* Сокращаем расстояние между фото */
-                padding: 0;
+            }
+
+            /* Позиционируем слайды поверх images4 */
+            .slider-wrapper {
+                top: 40%;
+                transform: translate(-50%, -40%);
             }
         }
     </style>
@@ -191,5 +195,6 @@
 
 </body>
 </html>
+
 
 
