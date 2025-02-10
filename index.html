@@ -111,8 +111,9 @@
 
             .swiper-slide {
                 flex-direction: column;
-                gap: 0; /* Убираем расстояние между фото */
+                gap: 0;
                 align-items: center;
+                position: relative;
             }
 
             /* Уменьшаем фото в 3 раза, но оставляем их плотно друг к другу */
@@ -120,8 +121,17 @@
                 width: 100%;
                 transform: scale(0.33);
                 border-radius: 10px;
-                margin: -5px 0; /* Чуть поднимаем, чтобы не было зазоров */
+                margin: -10px 0; /* Чуть поднимаем, чтобы не было зазоров */
                 padding: 0;
+            }
+
+            /* Перекрытие контейнеров слайдов наполовину */
+            .swiper-slide:nth-child(2) {
+                margin-top: -50px;
+            }
+
+            .swiper-slide:nth-child(3) {
+                margin-top: -50px;
             }
         }
     </style>
