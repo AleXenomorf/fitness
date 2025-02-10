@@ -152,11 +152,6 @@
             display: block;
         }
 
-        /* Логотип для мобильных устройств */
-        .mobile-logo {
-            display: none; /* По умолчанию скрыт */
-        }
-
         /* Адаптация под мобильные устройства */
         @media (max-width: 1024px) {
             /* Скрываем надписи на images1 */
@@ -174,27 +169,13 @@
                 width: 12vw;
             }
 
-            /* Второй логотип: сдвигаем вправо и уменьшаем на 20% */
+            /* Второй логотип: сдвигаем вправо, уменьшаем на 20% и опускаем ниже */
             .logo-overlay {
                 left: calc(20vw - 100px); /* Сдвиг вправо */
+                top: 20vw; /* Опускаем ниже */
             }
             .logo-overlay img {
                 width: 80%; /* Уменьшение на 20% */
-            }
-
-            /* Показываем мобильный логотип */
-            .mobile-logo {
-                display: block;
-                position: absolute;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 15vw;
-                z-index: 10;
-            }
-            .mobile-logo img {
-                width: 100%;
-                height: auto;
             }
 
             /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
@@ -243,11 +224,6 @@
             .scroll-to-top {
                 font-size: 14px;
                 padding: 8px 16px;
-            }
-
-            /* Мобильный логотип: уменьшаем размер */
-            .mobile-logo {
-                width: 20vw;
             }
         }
     </style>
@@ -317,11 +293,6 @@
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
         <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
         <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
-
-        <!-- Мобильный логотип (первый логотип) -->
-        <div class="mobile-logo">
-            <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
-        </div>
     </div>
 
     <!-- Кнопка "Наверх" -->
