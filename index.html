@@ -56,6 +56,64 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фитнес сайт</title>
+
+    <!-- Подключаем Swiper.js (слайдер) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Логотип + навигация */
+        .header {
+            position: absolute;
+            top: 2.5vw;
+            left: calc(10vw - 100px);
+            display: flex;
+            align-items: center;
+            gap: 1.5vw;
+            z-index: 20;
+        }
+
+        .logo img {
+            width: 8vw;
+            height: auto;
+        }
+
+        .nav-link {
+            font-size: 1.2vw;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Контейнер */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(10, auto);
+        }
+
+        .item {
+            width: 100%;
+            position: relative;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Логотип на images1 */
@@ -244,8 +302,43 @@
         <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+
     <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Инициализация Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Показ/скрытие кнопки "Наверх"
+        window.onscroll = function() {
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        };
+
+        // Функция для прокрутки вверх
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
-
