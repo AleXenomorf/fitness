@@ -67,7 +67,7 @@
         .swiper-slide {
             display: flex;
             justify-content: space-between;
-            gap: 20px; /* Для ПК оставляем 20px */
+            gap: 20px;
         }
 
         .swiper-slide img {
@@ -91,7 +91,7 @@
         @media (max-width: 768px) {
             /* Уменьшаем текст в 3 раза */
             .results-text {
-                font-size: 30px;
+                font-size: 30px; /* Уменьшили в 3 раза (92px / 3 ≈ 30px) */
                 flex-direction: column;
                 gap: 10px;
                 top: 20px;
@@ -99,7 +99,7 @@
 
             /* Растягиваем images4 в 5 раз по высоте */
             #slider-section img {
-                height: 500%;
+                height: 500%; /* Растягиваем в 5 раз */
                 object-fit: cover;
                 width: 100%;
             }
@@ -110,25 +110,18 @@
                 transform: translate(-50%, -50%);
             }
 
-            /* Фотографии в слайдах друг под другом ВПЛОТНУЮ */
             .swiper-slide {
                 flex-direction: column;
-                gap: 0; /* Убираем расстояние между изображениями */
                 align-items: center;
             }
 
-            /* Уменьшаем фото в 2 раза */
+            /* Уменьшаем слайды и ставим их плотно друг под другом */
             .swiper-slide img {
                 width: 50%;
-                transform: scale(0.5);
+                margin: 0;
+                padding: 0;
                 border-radius: 10px;
-                margin-bottom: 0; /* Полное прилегание фото друг к другу */
-            }
-
-            /* Позиционируем слайды поверх images4 */
-            .slider-wrapper {
-                top: 40%;
-                transform: translate(-50%, -40%);
+                display: block;
             }
         }
     </style>
@@ -184,7 +177,7 @@
     <script>
         const swiper = new Swiper('.swiper', {
             slidesPerView: 1,
-            spaceBetween: 20, /* Для ПК оставляем 20px */
+            spaceBetween: 20,
             loop: true,
             autoplay: {
                 delay: 3000,
@@ -195,4 +188,5 @@
 
 </body>
 </html>
+
 
