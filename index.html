@@ -14,13 +14,14 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
-        /* Логотип + Меню */
+        /* Логотип + навигация */
         .header {
             position: absolute;
             top: 27px;
-            left: 419px;
+            left: 370px;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -40,6 +41,7 @@
             color: black;
         }
 
+        /* Контейнер */
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -59,10 +61,25 @@
             object-fit: cover;
         }
 
+        /* Логотип на фоне images1 */
+        .logo-overlay {
+            position: absolute;
+            top: 194px;
+            left: 468px;
+            width: 448px;
+            height: 72px;
+        }
+
+        .logo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         /* Блок слайдера */
         .slider-wrapper {
             position: absolute;
-            bottom: 5%;
+            bottom: calc(5% + 150px); /* Опустил слайды на 50px */
             left: 50%;
             transform: translateX(-50%);
             width: 50%;
@@ -88,13 +105,33 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* Кнопка наверх */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            display: none;
+            z-index: 100;
+        }
+
+        .scroll-to-top:hover {
+            background: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
 
+    <!-- Логотип + ссылки -->
     <div class="header">
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
@@ -102,15 +139,26 @@
         <a href="#about-section" class="nav-link">О НАС</a>
         <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
         <a href="#cb-club-section" class="nav-link">CB CLUB</a>
+        <a href="#prices-section" class="nav-link">ЦЕНЫ</a>
+        <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
     </div>
 
     <div class="container">
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1"></div>
+        <!-- Первый блок с images1 и logo2 -->
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+            <div class="logo-overlay">
+                <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
+            </div>
+        </div>
+
         <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
         <div class="item"><img src="https://alexenomorf.github.io/fitness/images3.png" alt="Image 3"></div>
 
+        <!-- Блок слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4">
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> <!-- Фон -->
+
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -133,32 +181,55 @@
                             <img src="https://alexenomorf.github.io/fitness/result5.jpeg" alt="5">
                         </div>
                     </div>
+
+                    <!-- Навигация -->
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
 
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
-        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
+        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
+        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
+        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
+        document.addEventListener("DOMContentLoaded", function () {
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
         });
+
+        // Функция для кнопки "Наверх"
+        const scrollBtn = document.querySelector(".scroll-to-top");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     </script>
+
 </body>
 </html>
+
