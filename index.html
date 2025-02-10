@@ -83,16 +83,17 @@
 
         /* Адаптация под мобильные устройства */
         @media (max-width: 768px) {
+            /* Уменьшаем текст "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" в 3 раза */
             .results-text {
-                font-size: 46px;
+                font-size: 30px;
                 flex-direction: column;
-                gap: 20px;
-                top: 30px;
+                gap: 10px;
+                top: 20px;
             }
 
-            /* Растягиваем images4 в 3 раза по высоте */
+            /* Растягиваем images4 в 5 раз по высоте */
             #slider-section img {
-                height: 300%;
+                height: 500%;
                 object-fit: cover;
             }
 
@@ -107,7 +108,7 @@
 
             /* Уменьшаем слайды в 2 раза */
             .swiper-slide img {
-                width: 24%; /* Было 48%, уменьшил в 2 раза */
+                width: 24%;
             }
         }
     </style>
@@ -174,4 +175,5 @@
 
 </body>
 </html>
+
 
