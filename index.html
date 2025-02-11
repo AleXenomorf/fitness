@@ -129,31 +129,8 @@
         }
 
         /* Индикаторы (pagination) */
-        .swiper-pagination {
-            position: absolute;
-            bottom: 0; /* Прижимаем к нижнему краю */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            gap: 8px; /* Расстояние между точками */
-            z-index: 10; /* Убедимся, что пагинация поверх слайдов */
-            margin: 0; /* Убираем отступы */
-            padding: 0; /* Убираем отступы */
-        }
-
         .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
             background: #22ECE1;
-            opacity: 0.5;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-            opacity: 1;
         }
 
         /* Кнопка "Наверх" */
@@ -242,11 +219,6 @@
 
             .swiper-slide img {
                 width: 50%;
-            }
-
-            .swiper-pagination-bullet {
-                width: 12px;
-                height: 12px;
             }
 
             .scroll-to-top {
