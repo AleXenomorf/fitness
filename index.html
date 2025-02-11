@@ -128,34 +128,6 @@
             color: #22ECE1;
         }
 
-        /* Индикаторы (pagination) */
-        .swiper-pagination {
-            position: absolute;
-            bottom: 20px; /* Отступ от нижнего края images4 */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            gap: 8px; /* Расстояние между точками */
-            z-index: 10; /* Убедимся, что пагинация поверх слайдов */
-            margin: 0; /* Убираем отступы */
-            padding: 0; /* Убираем отступы */
-        }
-
-        .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #22ECE1;
-            opacity: 0.5;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-            opacity: 1;
-        }
-
         /* Кнопка "Наверх" */
         .scroll-to-top {
             position: fixed;
@@ -244,15 +216,6 @@
                 width: 50%;
             }
 
-            .swiper-pagination {
-                bottom: 10px; /* Уменьшаем отступ для мобильных устройств */
-            }
-
-            .swiper-pagination-bullet {
-                width: 12px;
-                height: 12px;
-            }
-
             .scroll-to-top {
                 font-size: 14px;
                 padding: 8px 16px;
@@ -314,7 +277,6 @@
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -340,10 +302,6 @@
             autoplay: {
                 delay: 3000, // Задержка между слайдами (3 секунды)
                 disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
             },
             navigation: {
                 nextEl: '.swiper-button-next',
