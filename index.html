@@ -128,146 +128,18 @@
             color: #22ECE1;
         }
 
-        /* Индикаторы (pagination) */<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фитнес сайт</title>
-
-    <!-- Подключаем Swiper.js (слайдер) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        /* Логотип + навигация */
-        .header {
-            position: absolute;
-            top: 2.5vw;
-            left: calc(10vw - 100px);
-            display: flex;
-            align-items: center;
-            gap: 1.5vw;
-            z-index: 20;
-        }
-
-        .logo img {
-            width: 8vw;
-            height: auto;
-        }
-
-        .nav-link {
-            font-size: 1.2vw;
-            font-weight: bold;
-            text-decoration: none;
-            color: black;
-        }
-
-        /* Контейнер */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(10, auto);
-        }
-
-        .item {
-            width: 100%;
-            position: relative;
-        }
-
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Логотип на images1 */
-        .logo-overlay {
-            position: absolute;
-            top: 15vw;
-            left: calc(15vw - 100px);
-            width: 30vw;
-        }
-
-        .logo-overlay img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
-        .results-text {
-            position: absolute;
-            top: 20px; /* Фиксированное расстояние сверху */
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            font-size: 2.5vw; /* Размер шрифта зависит от ширины экрана */
-            display: flex;
-            gap: 1vw; /* Расстояние между словами */
-            z-index: 10;
-        }
-
-        .results { color: #FFFFFF; }
-        .students { color: #22ECE1; }
-
-        /* Слайдер */
-        .slider-wrapper {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 800px;
-            height: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .swiper-slide img {
-            width: 40%;
-            max-height: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover; /* Обрезаем изображение */
-            object-position: top; /* Приоритет верхней части */
-        }
-
-        /* Кнопки навигации Swiper */
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #22ECE1;
-        }
-
         /* Индикаторы (pagination) */
         .swiper-pagination {
             position: absolute;
-            bottom: 20px; /* Отступ снизу */
+            bottom: 0; /* Прижимаем к нижнему краю */
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             justify-content: center;
             gap: 8px; /* Расстояние между точками */
             z-index: 10; /* Убедимся, что пагинация поверх слайдов */
+            margin: 0; /* Убираем отступы */
+            padding: 0; /* Убираем отступы */
         }
 
         .swiper-pagination-bullet {
@@ -370,10 +242,6 @@
 
             .swiper-slide img {
                 width: 50%;
-            }
-
-            .swiper-pagination {
-                bottom: 30px; /* Увеличиваем отступ для мобильных устройств */
             }
 
             .swiper-pagination-bullet {
