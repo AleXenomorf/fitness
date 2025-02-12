@@ -148,12 +148,77 @@
         }
 
         /* Адаптация под мобильные устройства */
-        @media (max-width: 768px) {
-            /* Скрываем логотипы и кнопку "Наверх" в мобильной версии */
-            .logo-overlay,
-            .logo img,
-            .scroll-to-top {
+        @media (max-width: 1024px) {
+            /* Скрываем надписи на images1 */
+            .header .nav-link {
                 display: none;
+            }
+
+            /* Сдвигаем логотип вправо */
+            .header {
+                left: 10vw; /* Сдвиг вправо */
+            }
+
+            /* Уменьшаем размер логотипа */
+            .logo img {
+                width: 12vw;
+            }
+
+            /* Второй логотип: сдвигаем вправо на 50px, уменьшаем на 20% и опускаем ниже */
+            .logo-overlay {
+                left: calc(20vw - 50px); /* Сдвиг вправо на 50px */
+                top: 20vw; /* Опускаем ниже */
+            }
+            .logo-overlay img {
+                width: 80%; /* Уменьшение на 20% */
+            }
+
+            /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+            .results-text {
+                font-size: 3.5vw;
+                top: 15px;
+            }
+
+            /* Адаптация слайдера */
+            .slider-wrapper {
+                width: 90%;
+                height: 70%;
+            }
+
+            .swiper-slide img {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Дополнительные стили для мобильных устройств */
+            .header {
+                top: 5vw;
+                left: 5vw;
+                gap: 3vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .results-text {
+                font-size: 4vw; /* Увеличенный размер шрифта для мобильных */
+                top: 10px; /* Меньшее расстояние сверху для мобильных */
+            }
+
+            .slider-wrapper {
+                width: 95%;
+                height: 60%;
+            }
+
+            .swiper-slide img {
+                width: 50%;
+            }
+
+            .scroll-to-top {
+                font-size: 14px;
+                padding: 8px 16px;
             }
 
             /* Вертикальный слайдер для мобильной версии */
@@ -164,6 +229,13 @@
             .swiper-slide img {
                 width: 80%;
                 margin-bottom: 10px;
+            }
+
+            /* Скрываем логотипы и кнопку "Наверх" в мобильной версии */
+            .logo-overlay,
+            .logo img,
+            .scroll-to-top {
+                display: none;
             }
 
             /* Перемещаем слайдер на середину следующей мобильной фотографии */
