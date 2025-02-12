@@ -220,6 +220,27 @@
                 font-size: 14px;
                 padding: 8px 16px;
             }
+
+            /* Скрываем логотип на мобильной версии */
+            .logo-overlay {
+                display: none;
+            }
+
+            /* Убираем логотип logo1 из мобильной версии */
+            .header .logo {
+                display: none;
+            }
+
+            /* Адаптация слайдера для мобильной версии */
+            .swiper-slide {
+                flex-direction: column; /* Слайды вертикально */
+                gap: 20px; /* Увеличиваем расстояние между фото */
+            }
+
+            .swiper-slide img {
+                width: 80%; /* Увеличиваем ширину изображений */
+                max-height: 40%; /* Уменьшаем высоту изображений */
+            }
         }
     </style>
 </head>
