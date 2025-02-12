@@ -220,6 +220,16 @@
                 font-size: 14px;
                 padding: 8px 16px;
             }
+
+            /* Вертикальный слайдер для мобильной версии */
+            .swiper-slide {
+                flex-direction: column;
+            }
+
+            .swiper-slide img {
+                width: 80%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -240,17 +250,19 @@
     <div class="container">
         <!-- images1 -->
         <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+            <img src="https://alexenomorf.github.io/fitness/images1.png" data-desktop="https://alexenomorf.github.io/fitness/images1.png" data-mobile="https://alexenomorf.github.io/fitness/mob1.png" alt="Image 1">
             <div class="logo-overlay">
                 <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
             </div>
         </div>
 
-        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
+        <div class="item" id="about-section">
+            <img src="https://alexenomorf.github.io/fitness/images2.png" data-desktop="https://alexenomorf.github.io/fitness/images2.png" data-mobile="https://alexenomorf.github.io/fitness/mob2.png" alt="Image 2">
+        </div>
 
         <!-- Секция слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> 
+            <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 4"> 
 
             <!-- Заголовок -->
             <div class="results-text">
@@ -281,12 +293,24 @@
             </div>
         </div>
 
-        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
-        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
-        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
-        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
+        <div class="item" id="cb-club-section">
+            <img src="https://alexenomorf.github.io/fitness/images5.jpg" data-desktop="https://alexenomorf.github.io/fitness/images5.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 5">
+        </div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images6.png" data-desktop="https://alexenomorf.github.io/fitness/images6.png" data-mobile="https://alexenomorf.github.io/fitness/mob5.jpg" alt="Image 6">
+        </div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images7.png" data-desktop="https://alexenomorf.github.io/fitness/images7.png" data-mobile="https://alexenomorf.github.io/fitness/mob6.jpg" alt="Image 7">
+        </div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images8.jpg" data-desktop="https://alexenomorf.github.io/fitness/images8.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob7.jpg" alt="Image 8">
+        </div>
+        <div class="item" id="prices-section">
+            <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.png" data-mobile="https://alexenomorf.github.io/fitness/mob8.jpg" alt="Image 9">
+        </div>
+        <div class="item" id="contacts-section">
+            <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 10">
+        </div>
     </div>
 
     <!-- Кнопка "Наверх" -->
@@ -326,6 +350,23 @@
                 behavior: 'smooth'
             });
         }
+
+        // Функция для смены изображений на мобильных устройствах
+        function updateImagesForMobile() {
+            const images = document.querySelectorAll('.item img');
+            images.forEach(img => {
+                const mobileSrc = img.getAttribute('data-mobile');
+                if (window.innerWidth <= 768 && mobileSrc) {
+                    img.src = mobileSrc;
+                } else {
+                    img.src = img.getAttribute('data-desktop');
+                }
+            });
+        }
+
+        // Вызов функции при загрузке и изменении размера окна
+        window.addEventListener('load', updateImagesForMobile);
+        window.addEventListener('resize', updateImagesForMobile);
     </script>
 </body>
 </html>
