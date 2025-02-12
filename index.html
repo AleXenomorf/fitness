@@ -388,7 +388,7 @@
         }
 
         // Вызов функции при загрузке и изменении размера окна
-        window.addEventListener('load', updateImagesForMobile);
+        document.addEventListener('DOMContentLoaded', updateImagesForMobile);
         window.addEventListener('resize', updateImagesForMobile);
     </script>
 </body>
