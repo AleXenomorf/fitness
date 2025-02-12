@@ -231,19 +231,36 @@
                 display: none;
             }
 
-            /* Слайдер в мобильной версии */
-            #slider-section {
-                background: none; /* Убираем фон */
+            /* Скрываем десктопный слайдер в мобильной версии */
+            .desktop-slider {
+                display: none;
             }
 
-            .swiper-slide {
+            /* Показываем мобильный слайдер в мобильной версии */
+            .mobile-slider {
+                display: block;
+            }
+
+            /* Слайдер в мобильной версии */
+            .mobile-slider .swiper-slide {
                 flex-direction: column; /* Слайды вертикально */
                 gap: 20px; /* Расстояние между слайдами */
             }
 
-            .swiper-slide img {
+            .mobile-slider .swiper-slide img {
                 width: 80%; /* Увеличиваем ширину изображений */
                 max-height: 40%; /* Уменьшаем высоту изображений */
+            }
+        }
+
+        /* Скрываем мобильный слайдер в десктопной версии */
+        @media (min-width: 769px) {
+            .mobile-slider {
+                display: none;
+            }
+
+            .desktop-slider {
+                display: block;
             }
         }
     </style>
