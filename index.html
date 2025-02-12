@@ -35,14 +35,18 @@
             </div>
         </div>
 
-        <!-- Остальные секции -->
         <div class="item" id="about-section">
             <img src="https://alexenomorf.github.io/fitness/images2.png" data-desktop="https://alexenomorf.github.io/fitness/images2.png" data-mobile="https://alexenomorf.github.io/fitness/mob2.png" alt="Image 2">
         </div>
 
+        <!-- Добавлено images3 для десктопной версии -->
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images3.png" data-desktop="https://alexenomorf.github.io/fitness/images3.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 3">
+        </div>
+
         <!-- Секция слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 4">
+            <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 4"> 
 
             <!-- Заголовок -->
             <div class="results-text">
@@ -73,7 +77,24 @@
             </div>
         </div>
 
-        <!-- Остальные секции -->
+        <div class="item" id="cb-club-section">
+            <img src="https://alexenomorf.github.io/fitness/images5.jpg" data-desktop="https://alexenomorf.github.io/fitness/images5.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob5.jpg" alt="Image 5">
+        </div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images6.png" data-desktop="https://alexenomorf.github.io/fitness/images6.png" data-mobile="https://alexenomorf.github.io/fitness/mob6.jpg" alt="Image 6">
+        </div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images7.png" data-desktop="https://alexenomorf.github.io/fitness/images7.png" data-mobile="https://alexenomorf.github.io/fitness/mob7.jpg" alt="Image 7">
+        </div>
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images8.jpg" data-desktop="https://alexenomorf.github.io/fitness/images8.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob8.jpg" alt="Image 8">
+        </div>
+        <div class="item" id="prices-section">
+            <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.png" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
+        </div>
+        <div class="item" id="contacts-section">
+            <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.jpg" alt="Image 10">
+        </div>
     </div>
 
     <!-- Кнопка "Наверх" -->
@@ -96,26 +117,8 @@
             },
         });
 
-        // Функция для обновления фоновых изображений (исключая слайдер)
-        function updateBackgroundImages() {
-            const backgroundImages = document.querySelectorAll('.item img:not(.swiper-slide img)');
-            backgroundImages.forEach(img => {
-                const mobileSrc = img.getAttribute('data-mobile');
-                const desktopSrc = img.getAttribute('data-desktop');
-                if (window.innerWidth <= 768 && mobileSrc) {
-                    img.src = mobileSrc;
-                } else if (desktopSrc) {
-                    img.src = desktopSrc;
-                }
-            });
-        }
-
-        // Вызов функции при загрузке и изменении размера окна
-        window.addEventListener('load', updateBackgroundImages);
-        window.addEventListener('resize', updateBackgroundImages);
-
         // Показ/скрытие кнопки "Наверх"
-        window.onscroll = function () {
+        window.onscroll = function() {
             const scrollToTopButton = document.querySelector('.scroll-to-top');
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 scrollToTopButton.classList.add('show');
@@ -131,6 +134,24 @@
                 behavior: 'smooth'
             });
         }
+
+        // Функция для смены изображений на мобильных устройствах (исключая слайдер)
+        function updateImagesForMobile() {
+            const images = document.querySelectorAll('.item img:not(.swiper-slide img)');
+            images.forEach(img => {
+                const mobileSrc = img.getAttribute('data-mobile');
+                const desktopSrc = img.getAttribute('data-desktop');
+                if (window.innerWidth <= 768 && mobileSrc) {
+                    img.src = mobileSrc;
+                } else if (desktopSrc) {
+                    img.src = desktopSrc;
+                }
+            });
+        }
+
+        // Вызов функции при загрузке и изменении размера окна
+        window.addEventListener('load', updateImagesForMobile);
+        window.addEventListener('resize', updateImagesForMobile);
     </script>
 </body>
 </html>
