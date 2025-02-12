@@ -367,9 +367,9 @@
             });
         }
 
-        // Функция для смены изображений на мобильных устройствах (исключая слайдер)
+        // Функция для смены изображений на мобильных устройствах (исключая слайдер и логотип)
         function updateImagesForMobile() {
-            const images = document.querySelectorAll('.item img:not(.swiper-slide img)');
+            const images = document.querySelectorAll('.item img:not(.swiper-slide img):not(.logo-overlay img):not(.logo img)');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
                 const desktopSrc = img.getAttribute('data-desktop');
