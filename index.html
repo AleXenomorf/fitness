@@ -58,6 +58,35 @@
             object-fit: cover;
         }
 
+        /* Логотип на images1 */
+        .logo-overlay {
+            position: absolute;
+            top: 15vw;
+            left: calc(15vw - 100px);
+            width: 30vw;
+        }
+
+        .logo-overlay img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+        .results-text {
+            position: absolute;
+            top: 20px; /* Фиксированное расстояние сверху */
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 2.5vw; /* Размер шрифта зависит от ширины экрана */
+            display: flex;
+            gap: 1vw; /* Расстояние между словами */
+            z-index: 10;
+        }
+
+        .results { color: #FFFFFF; }
+        .students { color: #22ECE1; }
+
         /* Слайдер */
         .slider-wrapper {
             position: absolute;
@@ -79,19 +108,18 @@
 
         .swiper-slide {
             display: flex;
-            flex-direction: column; /* Вертикальное расположение на моб версии */
             justify-content: center;
             align-items: center;
             gap: 10px;
         }
 
         .swiper-slide img {
-            width: 80%;
+            width: 40%;
             max-height: 100%;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-            object-position: top;
+            object-fit: cover; /* Обрезаем изображение */
+            object-position: top; /* Приоритет верхней части */
         }
 
         /* Кнопки навигации Swiper */
@@ -100,8 +128,27 @@
             color: #22ECE1;
         }
 
+        /* Кнопка "Наверх" */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #22ECE1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-to-top.show {
+            display: block;
+        }
+
         /* Адаптация под мобильные устройства */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             /* Скрываем надписи на images1 */
             .header .nav-link {
                 display: none;
@@ -109,21 +156,69 @@
 
             /* Сдвигаем логотип вправо */
             .header {
-                left: 10vw;
+                left: 10vw; /* Сдвиг вправо */
             }
 
+            /* Уменьшаем размер логотипа */
             .logo img {
                 width: 12vw;
+            }
+
+            /* Второй логотип: сдвигаем вправо на 50px, уменьшаем на 20% и опускаем ниже */
+            .logo-overlay {
+                left: calc(20vw - 50px); /* Сдвиг вправо на 50px */
+                top: 20vw; /* Опускаем ниже */
+            }
+            .logo-overlay img {
+                width: 80%; /* Уменьшение на 20% */
+            }
+
+            /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+            .results-text {
+                font-size: 3.5vw;
+                top: 15px;
             }
 
             /* Адаптация слайдера */
             .slider-wrapper {
                 width: 90%;
-                height: auto;
+                height: 70%;
             }
 
             .swiper-slide img {
-                width: 90%;
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Дополнительные стили для мобильных устройств */
+            .header {
+                top: 5vw;
+                left: 5vw;
+                gap: 3vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .results-text {
+                font-size: 4vw; /* Увеличенный размер шрифта для мобильных */
+                top: 10px; /* Меньшее расстояние сверху для мобильных */
+            }
+
+            .slider-wrapper {
+                width: 95%;
+                height: 60%;
+            }
+
+            .swiper-slide img {
+                width: 50%;
+            }
+
+            .scroll-to-top {
+                font-size: 14px;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -143,14 +238,26 @@
     </div>
 
     <div class="container">
-        <!-- Фоновые изображения -->
-        <div class="item" id="image1"><img src="" alt="Image 1"></div>
-        <div class="item" id="about-section"><img src="" alt="Image 2"></div>
+        <!-- images1 -->
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+            <div class="logo-overlay">
+                <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
+            </div>
+        </div>
+
+        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
 
         <!-- Секция слайдера -->
         <div class="item" id="slider-section">
-            <img src="" alt="Image 4"> 
-            
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> 
+
+            <!-- Заголовок -->
+            <div class="results-text">
+                <span class="results">РЕЗУЛЬТАТЫ</span>
+                <span class="students">ПОДОПЕЧНЫХ</span>
+            </div>
+
             <!-- Слайдер -->
             <div class="slider-wrapper">
                 <div class="swiper">
@@ -174,13 +281,16 @@
             </div>
         </div>
 
-        <div class="item" id="cb-club-section"><img src="" alt="Image 5"></div>
-        <div class="item"><img src="" alt="Image 6"></div>
-        <div class="item"><img src="" alt="Image 7"></div>
-        <div class="item"><img src="" alt="Image 8"></div>
-        <div class="item" id="prices-section"><img src="" alt="Image 9"></div>
-        <div class="item" id="contacts-section"><img src="" alt="Image 10"></div>
+        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
+        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
+        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
 
     <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -190,8 +300,8 @@
         const swiper = new Swiper('.swiper', {
             loop: true,
             autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
+                delay: 3000, // Задержка между слайдами (3 секунды)
+                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
             },
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -199,28 +309,23 @@
             },
         });
 
-        // Замена фоновых изображений в зависимости от устройства
-        function updateImages() {
-            const isMobile = window.innerWidth <= 768;
-            const images = document.querySelectorAll('.item img');
-            const desktopImages = [
-                "images1.png", "images2.png", "images4.png", "images5.jpg",
-                "images6.png", "images7.png", "images8.jpg", "images9.png", "images10.png"
-            ];
-            const mobileImages = [
-                "mob1.png", "mob2.png", "mob4.png", "mob5.jpg",
-                "mob6.jpg", "mob7.jpg", "mob8.jpg", "mob9.jpg", "mob10.jpg"
-            ];
+        // Показ/скрытие кнопки "Наверх"
+        window.onscroll = function() {
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        };
 
-            images.forEach((img, index) => {
-                img.src = `https://alexenomorf.github.io/fitness/${isMobile ? mobileImages[index] : desktopImages[index]}`;
+        // Функция для прокрутки вверх
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         }
-
-        window.addEventListener('resize', updateImages);
-        document.addEventListener('DOMContentLoaded', updateImages);
     </script>
-
 </body>
-</html>
-
+</html>  
