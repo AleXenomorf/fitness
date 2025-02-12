@@ -290,8 +290,8 @@
                 <span class="students">ПОДОПЕЧНЫХ</span>
             </div>
 
-            <!-- Слайдер -->
-            <div class="slider-wrapper">
+            <!-- Слайдер для десктопной версии -->
+            <div class="slider-wrapper desktop-slider">
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -304,6 +304,34 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
+                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <!-- Слайдер для мобильной версии -->
+            <div class="slider-wrapper mobile-slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
+                        </div>
+                        <div class="swiper-slide">
                             <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
                         </div>
                     </div>
@@ -340,16 +368,29 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // Инициализация Swiper
-        const swiper = new Swiper('.swiper', {
+        // Инициализация Swiper для десктопной версии
+        const desktopSwiper = new Swiper('.desktop-slider .swiper', {
             loop: true,
             autoplay: {
                 delay: 3000, // Задержка между слайдами (3 секунды)
                 disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.desktop-slider .swiper-button-next',
+                prevEl: '.desktop-slider .swiper-button-prev',
+            },
+        });
+
+        // Инициализация Swiper для мобильной версии
+        const mobileSwiper = new Swiper('.mobile-slider .swiper', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // Задержка между слайдами (3 секунды)
+                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
+            },
+            navigation: {
+                nextEl: '.mobile-slider .swiper-button-next',
+                prevEl: '.mobile-slider .swiper-button-prev',
             },
         });
 
