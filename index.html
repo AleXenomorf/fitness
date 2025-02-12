@@ -367,15 +367,16 @@
             });
         }
 
-        // Функция для смены изображений на мобильных устройствах
+        // Функция для смены изображений на мобильных устройствах (исключая слайдер)
         function updateImagesForMobile() {
-            const images = document.querySelectorAll('.item img');
+            const images = document.querySelectorAll('.item img:not(.swiper-slide img)');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
+                const desktopSrc = img.getAttribute('data-desktop');
                 if (window.innerWidth <= 768 && mobileSrc) {
                     img.src = mobileSrc;
-                } else {
-                    img.src = img.getAttribute('data-desktop');
+                } else if (desktopSrc) {
+                    img.src = desktopSrc;
                 }
             });
         }
