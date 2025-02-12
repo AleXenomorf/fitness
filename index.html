@@ -377,6 +377,14 @@
         // Вызов функции при загрузке и изменении размера окна
         window.addEventListener('load', updateImagesForMobile);
         window.addEventListener('resize', updateImagesForMobile);
+
+        // Отладочная информация для проверки загрузки изображений
+        window.addEventListener('load', () => {
+            console.log('Изображения в контейнере:');
+            document.querySelectorAll('.item img').forEach(img => {
+                console.log(img.src, img.complete ? 'загружено' : 'не загружено');
+            });
+        });
     </script>
 </body>
 </html>
