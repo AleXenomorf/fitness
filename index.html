@@ -16,6 +16,20 @@
             color: white;
             padding: 10px;
             text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+        }
+
+        .logo.logo1 {
+            left: 10px;
+        }
+
+        .logo.logo2 {
+            right: 10px;
         }
 
         nav ul {
@@ -65,6 +79,25 @@
                 display: block !important;
             }
 
+            /* Скрываем логотипы в мобильной версии */
+            .logo {
+                display: none;
+            }
+
+            /* Убираем кнопку "Наверх" */
+            .back-to-top {
+                display: none;
+            }
+
+            /* Центрирование слайдов */
+            .slider {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
             /* Вертикальное расположение слайдов для mob4.png */
             .slider-vertical {
                 flex-direction: column;
@@ -83,11 +116,24 @@
             padding: 20px;
             border-radius: 10px;
         }
+
+        /* Кнопка "Наверх" */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <!-- Навигация -->
     <header>
+        <img src="logo1.png" class="logo logo1" alt="Logo 1">
         <nav>
             <ul>
                 <li><a href="#about">О НАС</a></li>
@@ -98,6 +144,7 @@
                 <li><a href="#results">РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ</a></li>
             </ul>
         </nav>
+        <img src="logo2.png" class="logo logo2" alt="Logo 2">
     </header>
 
     <!-- Фоновые изображения -->
@@ -129,10 +176,13 @@
 
     <!-- Слайды -->
     <div class="slider">
-        <div class="slide">Слайд 1</div>
-        <div class="slide">Слайд 2</div>
-        <div class="slide">Слайд 3</div>
+        <div class="slide"><img src="slide1.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="slide2.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="slide3.jpg" alt="Slide 3"></div>
     </div>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top">Наверх</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
