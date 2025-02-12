@@ -221,9 +221,20 @@
                 padding: 8px 16px;
             }
 
-            /* Изменение изображений для мобильной версии */
-            .item img {
-                content: attr(data-mobile); /* Используем мобильные изображения */
+            /* Скрываем логотип и текст "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" в мобильной версии */
+            .logo-overlay,
+            .results-text {
+                display: none;
+            }
+
+            /* Вертикальный слайдер для мобильной версии */
+            .swiper-slide {
+                flex-direction: column;
+            }
+
+            .swiper-slide img {
+                width: 80%;
+                margin-bottom: 10px;
             }
         }
     </style>
