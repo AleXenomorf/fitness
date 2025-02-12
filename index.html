@@ -4,217 +4,328 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фитнес сайт</title>
+
+    <!-- Подключаем Swiper.js (слайдер) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <style>
-        /* Общие стили */
-        body {
+        body, html {
             margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-
-        .logo {
-            position: absolute;
-            top: 10px;
-        }
-
-        .logo.logo1 {
-            left: 10px;
-        }
-
-        .logo.logo2 {
-            right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .background-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .background-image,
-        .mobile-background {
+        /* Логотип + навигация */
+        .header {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 2.5vw;
+            left: calc(10vw - 100px);
+            display: flex;
+            align-items: center;
+            gap: 1.5vw;
+            z-index: 20;
+        }
+
+        .logo img {
+            width: 8vw;
+            height: auto;
+        }
+
+        .nav-link {
+            font-size: 1.2vw;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Контейнер */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(10, auto);
+        }
+
+        .item {
+            width: 100%;
+            position: relative;
+        }
+
+        .item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Скрываем мобильные изображения по умолчанию */
-        .mobile-background {
-            display: none;
+        /* Логотип на images1 */
+        .logo-overlay {
+            position: absolute;
+            top: 15vw;
+            left: calc(15vw - 100px);
+            width: 30vw;
         }
 
-        /* Мобильная версия */
-        @media only screen and (max-width: 768px) {
-            /* Скрываем стандартные изображения */
-            .background-image {
-                display: none;
-            }
-
-            /* Отображаем только мобильные изображения */
-            .mobile-background {
-                display: block !important;
-            }
-
-            /* Скрываем логотипы в мобильной версии */
-            .logo {
-                display: none;
-            }
-
-            /* Убираем кнопку "Наверх" */
-            .back-to-top {
-                display: none;
-            }
-
-            /* Центрирование слайдов */
-            .slider {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding: 20px;
-            }
-
-            /* Вертикальное расположение слайдов для mob4.png */
-            .slider-vertical {
-                flex-direction: column;
-            }
+        .logo-overlay img {
+            width: 100%;
+            height: auto;
         }
 
-        /* Стили для слайдера */
-        .slider {
+        /* "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+        .results-text {
+            position: absolute;
+            top: 20px; /* Фиксированное расстояние сверху */
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 2.5vw; /* Размер шрифта зависит от ширины экрана */
             display: flex;
-            gap: 20px;
-            padding: 20px;
+            gap: 1vw; /* Расстояние между словами */
+            z-index: 10;
         }
 
-        .slide {
-            background-color: #f0f0f0;
-            padding: 20px;
+        .results { color: #FFFFFF; }
+        .students { color: #22ECE1; }
+
+        /* Слайдер */
+        .slider-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .swiper-slide img {
+            width: 40%;
+            max-height: 100%;
             border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            object-fit: cover; /* Обрезаем изображение */
+            object-position: top; /* Приоритет верхней части */
+        }
+
+        /* Кнопки навигации Swiper */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #22ECE1;
         }
 
         /* Кнопка "Наверх" */
-        .back-to-top {
+        .scroll-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #333;
+            background-color: #22ECE1;
             color: white;
+            border: none;
             padding: 10px 20px;
-            text-decoration: none;
+            font-size: 16px;
             border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-to-top.show {
+            display: block;
+        }
+
+        /* Адаптация под мобильные устройства */
+        @media (max-width: 1024px) {
+            /* Скрываем надписи на images1 */
+            .header .nav-link {
+                display: none;
+            }
+
+            /* Сдвигаем логотип вправо */
+            .header {
+                left: 10vw; /* Сдвиг вправо */
+            }
+
+            /* Уменьшаем размер логотипа */
+            .logo img {
+                width: 12vw;
+            }
+
+            /* Второй логотип: сдвигаем вправо на 50px, уменьшаем на 20% и опускаем ниже */
+            .logo-overlay {
+                left: calc(20vw - 50px); /* Сдвиг вправо на 50px */
+                top: 20vw; /* Опускаем ниже */
+            }
+            .logo-overlay img {
+                width: 80%; /* Уменьшение на 20% */
+            }
+
+            /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+            .results-text {
+                font-size: 3.5vw;
+                top: 15px;
+            }
+
+            /* Адаптация слайдера */
+            .slider-wrapper {
+                width: 90%;
+                height: 70%;
+            }
+
+            .swiper-slide img {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Дополнительные стили для мобильных устройств */
+            .header {
+                top: 5vw;
+                left: 5vw;
+                gap: 3vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .results-text {
+                font-size: 4vw; /* Увеличенный размер шрифта для мобильных */
+                top: 10px; /* Меньшее расстояние сверху для мобильных */
+            }
+
+            .slider-wrapper {
+                width: 95%;
+                height: 60%;
+            }
+
+            .swiper-slide img {
+                width: 50%;
+            }
+
+            .scroll-to-top {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Навигация -->
-    <header>
-        <img src="logo1.png" class="logo logo1" alt="Logo 1">
-        <nav>
-            <ul>
-                <li><a href="#about">О НАС</a></li>
-                <li><a href="#before-after">ДО/ПОСЛЕ</a></li>
-                <li><a href="#cb-club">CB CLUB</a></li>
-                <li><a href="#prices">ЦЕНЫ</a></li>
-                <li><a href="#contacts">КОНТАКТЫ</a></li>
-                <li><a href="#results">РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ</a></li>
-            </ul>
-        </nav>
-        <img src="logo2.png" class="logo logo2" alt="Logo 2">
-    </header>
 
-    <!-- Фоновые изображения -->
-    <div class="background-container">
-        <!-- Стандартные изображения для десктопа -->
-        <img src="images1.jpg" class="background-image" alt="Desktop Background 1">
-        <img src="images2.jpg" class="background-image" alt="Desktop Background 2">
-        <img src="images3.jpg" class="background-image" alt="Desktop Background 3">
-        <img src="images4.jpg" class="background-image" alt="Desktop Background 4">
-        <img src="images5.jpg" class="background-image" alt="Desktop Background 5">
-        <img src="images6.jpg" class="background-image" alt="Desktop Background 6">
-        <img src="images7.jpg" class="background-image" alt="Desktop Background 7">
-        <img src="images8.jpg" class="background-image" alt="Desktop Background 8">
-        <img src="images9.jpg" class="background-image" alt="Desktop Background 9">
-        <img src="images10.jpg" class="background-image" alt="Desktop Background 10">
-
-        <!-- Изображения для мобильной версии -->
-        <img src="mob1.png" class="mobile-background" alt="Mobile Background 1">
-        <img src="mob2.png" class="mobile-background" alt="Mobile Background 2">
-        <img src="mob3.jpg" class="mobile-background" alt="Mobile Background 3">
-        <img src="mob4.png" class="mobile-background slider-vertical" alt="Mobile Background 4">
-        <img src="mob5.jpg" class="mobile-background" alt="Mobile Background 5">
-        <img src="mob6.jpg" class="mobile-background" alt="Mobile Background 6">
-        <img src="mob7.jpg" class="mobile-background" alt="Mobile Background 7">
-        <img src="mob8.jpg" class="mobile-background" alt="Mobile Background 8">
-        <img src="mob9.jpg" class="mobile-background" alt="Mobile Background 9">
-        <img src="mob10.jpg" class="mobile-background" alt="Mobile Background 10">
+    <!-- Логотип + ссылки -->
+    <div class="header">
+        <div class="logo">
+            <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
+        </div>
+        <a href="#about-section" class="nav-link">О НАС</a>
+        <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
+        <a href="#cb-club-section" class="nav-link">CB CLUB</a>
+        <a href="#prices-section" class="nav-link">ЦЕНЫ</a>
+        <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
     </div>
 
-    <!-- Слайды -->
-    <div class="slider">
-        <div class="slide"><img src="slide1.jpg" alt="Slide 1"></div>
-        <div class="slide"><img src="slide2.jpg" alt="Slide 2"></div>
-        <div class="slide"><img src="slide3.jpg" alt="Slide 3"></div>
+    <div class="container">
+        <!-- images1 -->
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images1.png" alt="Image 1">
+            <div class="logo-overlay">
+                <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
+            </div>
+        </div>
+
+        <div class="item" id="about-section"><img src="https://alexenomorf.github.io/fitness/images2.png" alt="Image 2"></div>
+
+        <!-- Секция слайдера -->
+        <div class="item" id="slider-section">
+            <img src="https://alexenomorf.github.io/fitness/images4.png" alt="Image 4"> 
+
+            <!-- Заголовок -->
+            <div class="results-text">
+                <span class="results">РЕЗУЛЬТАТЫ</span>
+                <span class="students">ПОДОПЕЧНЫХ</span>
+            </div>
+
+            <!-- Слайдер -->
+            <div class="slider-wrapper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
+                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
+                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
+                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="cb-club-section"><img src="https://alexenomorf.github.io/fitness/images5.jpg" alt="Image 5"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images6.png" alt="Image 6"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images7.png" alt="Image 7"></div>
+        <div class="item"><img src="https://alexenomorf.github.io/fitness/images8.jpg" alt="Image 8"></div>
+        <div class="item" id="prices-section"><img src="https://alexenomorf.github.io/fitness/images9.png" alt="Image 9"></div>
+        <div class="item" id="contacts-section"><img src="https://alexenomorf.github.io/fitness/images10.png" alt="Image 10"></div>
     </div>
 
     <!-- Кнопка "Наверх" -->
-    <a href="#" class="back-to-top">Наверх</a>
+    <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+
+    <!-- Подключение Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Проверяем ширину экрана
-            if (window.innerWidth <= 768) {
-                // Удаляем все стандартные изображения
-                const desktopImages = document.querySelectorAll('.background-image');
-                desktopImages.forEach(img => img.remove());
-
-                // Добавляем только мобильные изображения
-                const mobileImages = [
-                    "mob1.png",
-                    "mob2.png",
-                    "mob3.jpg",
-                    "mob4.png",
-                    "mob5.jpg",
-                    "mob6.jpg",
-                    "mob7.jpg",
-                    "mob8.jpg",
-                    "mob9.jpg",
-                    "mob10.jpg"
-                ];
-
-                const container = document.querySelector('.background-container');
-                mobileImages.forEach(src => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.className = 'mobile-background';
-                    container.appendChild(img);
-                });
-            }
+        // Инициализация Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // Задержка между слайдами (3 секунды)
+                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
+
+        // Показ/скрытие кнопки "Наверх"
+        window.onscroll = function() {
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        };
+
+        // Функция для прокрутки вверх
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
