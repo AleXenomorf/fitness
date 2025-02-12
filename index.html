@@ -9,7 +9,239 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <style>
-        /* Ваши стили */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Логотип + навигация */
+        .header {
+            position: absolute;
+            top: 2.5vw;
+            left: calc(10vw - 100px);
+            display: flex;
+            align-items: center;
+            gap: 1.5vw;
+            z-index: 20;
+        }
+
+        .logo img {
+            width: 8vw;
+            height: auto;
+        }
+
+        .nav-link {
+            font-size: 1.2vw;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Контейнер */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(10, auto);
+        }
+
+        .item {
+            width: 100%;
+            position: relative;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Логотип на images1 */
+        .logo-overlay {
+            position: absolute;
+            top: 15vw;
+            left: calc(15vw - 100px);
+            width: 30vw;
+        }
+
+        .logo-overlay img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+        .results-text {
+            position: absolute;
+            top: 20px; /* Фиксированное расстояние сверху */
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 2.5vw; /* Размер шрифта зависит от ширины экрана */
+            display: flex;
+            gap: 1vw; /* Расстояние между словами */
+            z-index: 10;
+        }
+
+        .results { color: #FFFFFF; }
+        .students { color: #22ECE1; }
+
+        /* Слайдер */
+        .slider-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .swiper-slide img {
+            width: 40%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            object-fit: cover; /* Обрезаем изображение */
+            object-position: top; /* Приоритет верхней части */
+        }
+
+        /* Кнопки навигации Swiper */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #22ECE1;
+        }
+
+        /* Кнопка "Наверх" */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #22ECE1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-to-top.show {
+            display: block;
+        }
+
+        /* Адаптация под мобильные устройства */
+        @media (max-width: 1024px) {
+            /* Скрываем надписи на images1 */
+            .header .nav-link {
+                display: none;
+            }
+
+            /* Сдвигаем логотип вправо */
+            .header {
+                left: 10vw; /* Сдвиг вправо */
+            }
+
+            /* Уменьшаем размер логотипа */
+            .logo img {
+                width: 12vw;
+            }
+
+            /* Второй логотип: сдвигаем вправо на 50px, уменьшаем на 20% и опускаем ниже */
+            .logo-overlay {
+                left: calc(20vw - 50px); /* Сдвиг вправо на 50px */
+                top: 20vw; /* Опускаем ниже */
+            }
+            .logo-overlay img {
+                width: 80%; /* Уменьшение на 20% */
+            }
+
+            /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+            .results-text {
+                font-size: 3.5vw;
+                top: 15px;
+            }
+
+            /* Адаптация слайдера */
+            .slider-wrapper {
+                width: 90%;
+                height: 70%;
+            }
+
+            .swiper-slide img {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Дополнительные стили для мобильных устройств */
+            .header {
+                top: 5vw;
+                left: 5vw;
+                gap: 3vw;
+            }
+
+            .logo img {
+                width: 15vw;
+            }
+
+            .results-text {
+                font-size: 4vw; /* Увеличенный размер шрифта для мобильных */
+                top: 10px; /* Меньшее расстояние сверху для мобильных */
+            }
+
+            .slider-wrapper {
+                width: 95%;
+                height: 60%;
+            }
+
+            .swiper-slide img {
+                width: 50%;
+            }
+
+            .scroll-to-top {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            /* Скрываем логотип на мобильной версии */
+            .logo-overlay {
+                display: none;
+            }
+
+            /* Убираем логотип logo1 из мобильной версии */
+            .header .logo {
+                display: none;
+            }
+
+            /* Адаптация слайдера для мобильной версии */
+            .swiper-slide {
+                flex-direction: column; /* Слайды вертикально */
+                gap: 20px; /* Увеличиваем расстояние между фото */
+            }
+
+            .swiper-slide img {
+                width: 80%; /* Увеличиваем ширину изображений */
+                max-height: 40%; /* Уменьшаем высоту изображений */
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,16 +367,15 @@
             });
         }
 
-        // Функция для смены изображений на мобильных устройствах (исключая слайдер)
+        // Функция для смены изображений на мобильных устройствах
         function updateImagesForMobile() {
-            const images = document.querySelectorAll('.item img:not(.swiper-slide img)');
+            const images = document.querySelectorAll('.item img');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
-                const desktopSrc = img.getAttribute('data-desktop');
                 if (window.innerWidth <= 768 && mobileSrc) {
                     img.src = mobileSrc;
-                } else if (desktopSrc) {
-                    img.src = desktopSrc;
+                } else {
+                    img.src = img.getAttribute('data-desktop');
                 }
             });
         }
