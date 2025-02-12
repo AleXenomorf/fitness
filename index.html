@@ -219,6 +219,7 @@
             .scroll-to-top {
                 font-size: 14px;
                 padding: 8px 16px;
+                display: none !important; /* Скрываем кнопку "Наверх" в мобильной версии */
             }
 
             /* Вертикальный слайдер для мобильной версии */
@@ -231,10 +232,9 @@
                 margin-bottom: 10px;
             }
 
-            /* Скрываем логотипы и кнопку "Наверх" в мобильной версии */
+            /* Скрываем логотипы в мобильной версии */
             .logo-overlay,
-            .logo img,
-            .scroll-to-top {
+            .logo img {
                 display: none;
             }
 
@@ -252,11 +252,6 @@
                 width: 100%;
                 height: auto;
                 margin-top: 20px; /* Отступ сверху */
-            }
-
-            /* Применяем mob1-10 для мобильной версии */
-            .item img {
-                content: attr(data-mobile);
             }
         }
     </style>
