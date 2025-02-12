@@ -221,37 +221,9 @@
                 padding: 8px 16px;
             }
 
-            /* Вертикальный слайдер для мобильной версии */
-            .swiper-slide {
-                flex-direction: column;
-            }
-
-            .swiper-slide img {
-                width: 80%;
-                margin-bottom: 10px;
-            }
-
-            /* Скрываем логотипы и кнопку "Наверх" в мобильной версии */
-            .logo-overlay,
-            .logo img,
-            .scroll-to-top {
-                display: none;
-            }
-
-            /* Перемещаем слайдер на середину следующей мобильной фотографии */
-            #slider-section {
-                position: relative;
-                height: auto;
-            }
-
-            .slider-wrapper {
-                position: relative;
-                top: 0;
-                left: 0;
-                transform: none;
-                width: 100%;
-                height: auto;
-                margin-top: 20px; /* Отступ сверху */
+            /* Изменение изображений для мобильной версии */
+            .item img {
+                content: attr(data-mobile); /* Используем мобильные изображения */
             }
         }
     </style>
