@@ -20,17 +20,21 @@
         /* Логотип + навигация */
         .header {
             position: absolute;
-            top: 2.5vw;
-            left: calc(10vw - 100px);
+            top: 27px;
+            left: 419px;
             display: flex;
             align-items: center;
             gap: 1.5vw;
             z-index: 20;
         }
 
+        .logo {
+            display: block;
+        }
+
         .logo img {
-            width: 8vw;
-            height: auto;
+            width: 128px;
+            height: 96px;
         }
 
         .nav-link {
@@ -58,12 +62,12 @@
             object-fit: cover;
         }
 
-        /* Логотип на images1 */
+        /* Логотипы на images1 */
         .logo-overlay {
             position: absolute;
-            top: 15vw;
-            left: calc(15vw - 100px);
-            width: 30vw;
+            top: 194px;
+            left: 468px;
+            width: 448px;
         }
 
         .logo-overlay img {
@@ -74,13 +78,15 @@
         /* "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-text {
             position: absolute;
-            top: 20px; /* Фиксированное расстояние сверху */
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             font-weight: bold;
-            font-size: 2.5vw; /* Размер шрифта зависит от ширины экрана */
+            font-size: 2.5vw;
             display: flex;
-            gap: 1vw; /* Расстояние между словами */
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
             z-index: 10;
         }
 
@@ -110,16 +116,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             gap: 10px;
         }
 
         .swiper-slide img {
-            width: 40%;
+            width: 80%;
             max-height: 100%;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover; /* Обрезаем изображение */
-            object-position: top; /* Приоритет верхней части */
+            object-fit: cover;
+            object-position: top;
         }
 
         /* Кнопки навигации Swiper */
@@ -149,34 +156,22 @@
 
         /* Адаптация под мобильные устройства */
         @media (max-width: 1024px) {
-            /* Скрываем надписи на images1 */
-            .header .nav-link {
+            /* Скрываем логотипы */
+            .logo,
+            .logo-overlay {
                 display: none;
             }
 
-            /* Сдвигаем логотип вправо */
-            .header {
-                left: 10vw; /* Сдвиг вправо */
-            }
-
-            /* Уменьшаем размер логотипа */
-            .logo img {
-                width: 12vw;
-            }
-
-            /* Второй логотип: сдвигаем вправо на 50px, уменьшаем на 20% и опускаем ниже */
-            .logo-overlay {
-                left: calc(20vw - 50px); /* Сдвиг вправо на 50px */
-                top: 20vw; /* Опускаем ниже */
-            }
-            .logo-overlay img {
-                width: 80%; /* Уменьшение на 20% */
+            /* Показываем только мобильные изображения */
+            .item img {
+                content: attr(data-mobile-src);
             }
 
             /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
             .results-text {
                 font-size: 3.5vw;
                 top: 15px;
+                gap: 20px;
             }
 
             /* Адаптация слайдера */
@@ -185,45 +180,12 @@
                 height: 70%;
             }
 
-            .swiper-slide img {
-                width: 45%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Дополнительные стили для мобильных устройств */
-            .header {
-                top: 5vw;
-                left: 5vw;
-                gap: 3vw;
-            }
-
-            .logo img {
-                width: 15vw;
-            }
-
-            .results-text {
-                font-size: 4vw; /* Увеличенный размер шрифта для мобильных */
-                top: 10px; /* Меньшее расстояние сверху для мобильных */
-            }
-
-            .slider-wrapper {
-                width: 95%;
-                height: 60%;
+            .swiper-slide {
+                flex-direction: column;
             }
 
             .swiper-slide img {
-                width: 50%;
-            }
-
-            .scroll-to-top {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-
-            /* Изменение изображений для мобильной версии */
-            .item img {
-                content: attr(data-mobile); /* Используем мобильные изображения */
+                width: 80%;
             }
         }
     </style>
@@ -233,54 +195,36 @@
     <!-- Логотип + ссылки -->
     <div class="header">
         <div class="logo">
-            <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
+            <img src="logo1.png" alt="Логотип">
         </div>
-        <a href="#about-section" class="nav-link">О НАС</a>
-        <a href="#slider-section" class="nav-link">ДО/ПОСЛЕ</a>
-        <a href="#cb-club-section" class="nav-link">CB CLUB</a>
-        <a href="#prices-section" class="nav-link">ЦЕНЫ</a>
-        <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
     </div>
 
     <div class="container">
         <!-- images1 -->
         <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images1.png" data-desktop="https://alexenomorf.github.io/fitness/images1.png" data-mobile="https://alexenomorf.github.io/fitness/mob1.png" alt="Image 1">
+            <img src="images1.png" data-mobile-src="mob1.png" alt="Image 1">
             <div class="logo-overlay">
-                <img src="https://alexenomorf.github.io/fitness/logo2.png" alt="Logo 2">
+                <img src="logo2.png" alt="Logo 2">
             </div>
         </div>
 
-        <div class="item" id="about-section">
-            <img src="https://alexenomorf.github.io/fitness/images2.png" data-desktop="https://alexenomorf.github.io/fitness/images2.png" data-mobile="https://alexenomorf.github.io/fitness/mob2.png" alt="Image 2">
-        </div>
+        <div class="item"><img src="images2.png" data-mobile-src="mob2.png" alt="Image 2"></div>
 
         <!-- Секция слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 4"> 
+            <img src="images4.png" data-mobile-src="mob4.png" alt="Image 4"> 
 
-            <!-- Заголовок -->
             <div class="results-text">
                 <span class="results">РЕЗУЛЬТАТЫ</span>
                 <span class="students">ПОДОПЕЧНЫХ</span>
             </div>
 
-            <!-- Слайдер -->
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
-                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
-                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
-                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
-                        </div>
+                        <div class="swiper-slide"><img src="1,1.jpeg"><img src="1.jpeg"></div>
+                        <div class="swiper-slide"><img src="2,2.jpeg"><img src="2.jpeg"></div>
+                        <div class="swiper-slide"><img src="3,3.jpeg"><img src="3.png"></div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -288,80 +232,17 @@
             </div>
         </div>
 
-        <div class="item" id="cb-club-section">
-            <img src="https://alexenomorf.github.io/fitness/images5.jpg" data-desktop="https://alexenomorf.github.io/fitness/images5.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 5">
-        </div>
-        <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images6.png" data-desktop="https://alexenomorf.github.io/fitness/images6.png" data-mobile="https://alexenomorf.github.io/fitness/mob5.jpg" alt="Image 6">
-        </div>
-        <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images7.png" data-desktop="https://alexenomorf.github.io/fitness/images7.png" data-mobile="https://alexenomorf.github.io/fitness/mob6.jpg" alt="Image 7">
-        </div>
-        <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images8.jpg" data-desktop="https://alexenomorf.github.io/fitness/images8.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob7.jpg" alt="Image 8">
-        </div>
-        <div class="item" id="prices-section">
-            <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.png" data-mobile="https://alexenomorf.github.io/fitness/mob8.jpg" alt="Image 9">
-        </div>
-        <div class="item" id="contacts-section">
-            <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 10">
-        </div>
+        <div class="item"><img src="images5.jpg" data-mobile-src="mob5.jpg" alt="Image 5"></div>
+        <div class="item"><img src="images6.png" data-mobile-src="mob6.jpg" alt="Image 6"></div>
+        <div class="item"><img src="images7.png" data-mobile-src="mob7.jpg" alt="Image 7"></div>
+        <div class="item"><img src="images8.png" data-mobile-src="mob8.jpg" alt="Image 8"></div>
+        <div class="item"><img src="images9.png" data-mobile-src="mob9.jpg" alt="Image 9"></div>
+        <div class="item"><img src="images10.png" data-mobile-src="mob10.jpg" alt="Image 10"></div>
     </div>
 
     <!-- Кнопка "Наверх" -->
     <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
 
-    <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script>
-        // Инициализация Swiper
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            autoplay: {
-                delay: 3000, // Задержка между слайдами (3 секунды)
-                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-
-        // Показ/скрытие кнопки "Наверх"
-        window.onscroll = function() {
-            const scrollToTopButton = document.querySelector('.scroll-to-top');
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollToTopButton.classList.add('show');
-            } else {
-                scrollToTopButton.classList.remove('show');
-            }
-        };
-
-        // Функция для прокрутки вверх
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Функция для смены изображений на мобильных устройствах
-        function updateImagesForMobile() {
-            const images = document.querySelectorAll('.item img');
-            images.forEach(img => {
-                const mobileSrc = img.getAttribute('data-mobile');
-                if (window.innerWidth <= 768 && mobileSrc) {
-                    img.src = mobileSrc;
-                } else {
-                    img.src = img.getAttribute('data-desktop');
-                }
-            });
-        }
-
-        // Вызов функции при загрузке и изменении размера окна
-        window.addEventListener('load', updateImagesForMobile);
-        window.addEventListener('resize', updateImagesForMobile);
-    </script>
 </body>
 </html>
