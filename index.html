@@ -231,36 +231,9 @@
                 display: none;
             }
 
-            /* Скрываем десктопный слайдер в мобильной версии */
-            .desktop-slider {
+            /* Скрываем слайдер в мобильной версии */
+            .slider-wrapper {
                 display: none;
-            }
-
-            /* Показываем мобильный слайдер в мобильной версии */
-            .mobile-slider {
-                display: block;
-            }
-
-            /* Слайдер в мобильной версии */
-            .mobile-slider .swiper-slide {
-                flex-direction: column; /* Слайды вертикально */
-                gap: 40px; /* Увеличиваем расстояние между фото */
-            }
-
-            .mobile-slider .swiper-slide img {
-                width: 80%; /* Увеличиваем ширину изображений */
-                max-height: 40%; /* Уменьшаем высоту изображений */
-            }
-        }
-
-        /* Скрываем мобильный слайдер в десктопной версии */
-        @media (min-width: 769px) {
-            .mobile-slider {
-                display: none;
-            }
-
-            .desktop-slider {
-                display: block;
             }
         }
     </style>
@@ -328,28 +301,6 @@
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-
-            <!-- Слайдер для мобильной версии -->
-            <div class="slider-wrapper mobile-slider">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
-                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
-                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
-                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
-                        </div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
         </div>
 
         <div class="item" id="cb-club-section">
@@ -392,19 +343,6 @@
             },
         });
 
-        // Инициализация Swiper для мобильной версии
-        const mobileSwiper = new Swiper('.mobile-slider .swiper', {
-            loop: true,
-            autoplay: {
-                delay: 3000, // Задержка между слайдами (3 секунды)
-                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
-            },
-            navigation: {
-                nextEl: '.mobile-slider .swiper-button-next',
-                prevEl: '.mobile-slider .swiper-button-prev',
-            },
-        });
-
         // Показ/скрытие кнопки "Наверх"
         window.onscroll = function() {
             const scrollToTopButton = document.querySelector('.scroll-to-top');
@@ -439,14 +377,6 @@
         // Вызов функции при загрузке и изменении размера окна
         window.addEventListener('load', updateImagesForMobile);
         window.addEventListener('resize', updateImagesForMobile);
-
-        // Отладочная информация для проверки загрузки изображений
-        window.addEventListener('load', () => {
-            console.log('Изображения в слайдах:');
-            document.querySelectorAll('.swiper-slide img').forEach(img => {
-                console.log(img.src, img.complete ? 'загружено' : 'не загружено');
-            });
-        });
     </script>
 </body>
 </html>
