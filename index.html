@@ -225,6 +225,28 @@
             .logo-overlay {
                 display: none;
             }
+
+            /* Убираем логотип logo1 из мобильной версии */
+            .header .logo {
+                display: none;
+            }
+
+            /* Слайдер в мобильной версии */
+            #slider-section {
+                background-image: url('https://alexenomorf.github.io/fitness/mob4.png');
+                background-size: cover;
+                background-position: center;
+            }
+
+            .swiper-slide {
+                flex-direction: column; /* Слайды вертикально */
+                gap: 20px; /* Расстояние между слайдами */
+            }
+
+            .swiper-slide img {
+                width: 80%; /* Увеличиваем ширину изображений */
+                max-height: 40%; /* Уменьшаем высоту изображений */
+            }
         }
     </style>
 </head>
