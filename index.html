@@ -220,6 +220,16 @@
                 font-size: 14px;
                 padding: 8px 16px;
             }
+
+            /* Скрываем логотип на мобильной версии */
+            .logo-overlay {
+                display: none;
+            }
+
+            /* Используем mob4 для фона слайдера на мобильной версии */
+            #slider-section img {
+                content: url('https://alexenomorf.github.io/fitness/mob4.png');
+            }
         }
     </style>
 </head>
@@ -250,9 +260,14 @@
             <img src="https://alexenomorf.github.io/fitness/images2.png" data-desktop="https://alexenomorf.github.io/fitness/images2.png" data-mobile="https://alexenomorf.github.io/fitness/mob2.png" alt="Image 2">
         </div>
 
+        <!-- Добавлено images3 для десктопной версии -->
+        <div class="item">
+            <img src="https://alexenomorf.github.io/fitness/images3.png" data-desktop="https://alexenomorf.github.io/fitness/images3.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 3">
+        </div>
+
         <!-- Секция слайдера -->
         <div class="item" id="slider-section">
-            <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 4"> 
+            <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 4"> 
 
             <!-- Заголовок -->
             <div class="results-text">
@@ -265,16 +280,16 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" data-desktop="https://alexenomorf.github.io/fitness/1,1.jpeg" data-mobile="https://alexenomorf.github.io/fitness/mob1,1.jpeg" alt="1-1">
-                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" data-desktop="https://alexenomorf.github.io/fitness/1.jpeg" data-mobile="https://alexenomorf.github.io/fitness/mob1.jpeg" alt="1">
+                            <img src="https://alexenomorf.github.io/fitness/1,1.jpeg" alt="1-1">
+                            <img src="https://alexenomorf.github.io/fitness/1.jpeg" alt="1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" data-desktop="https://alexenomorf.github.io/fitness/2,2.jpeg" data-mobile="https://alexenomorf.github.io/fitness/mob2,2.jpeg" alt="2-2">
-                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" data-desktop="https://alexenomorf.github.io/fitness/2.jpeg" data-mobile="https://alexenomorf.github.io/fitness/mob2.jpeg" alt="2">
+                            <img src="https://alexenomorf.github.io/fitness/2,2.jpeg" alt="2-2">
+                            <img src="https://alexenomorf.github.io/fitness/2.jpeg" alt="2">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" data-desktop="https://alexenomorf.github.io/fitness/3,3.jpeg" data-mobile="https://alexenomorf.github.io/fitness/mob3,3.jpeg" alt="3-3">
-                            <img src="https://alexenomorf.github.io/fitness/3.png" data-desktop="https://alexenomorf.github.io/fitness/3.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.png" alt="3">
+                            <img src="https://alexenomorf.github.io/fitness/3,3.jpeg" alt="3-3">
+                            <img src="https://alexenomorf.github.io/fitness/3.png" alt="3">
                         </div>
                     </div>
                     <div class="swiper-button-next"></div>
@@ -343,7 +358,7 @@
 
         // Функция для смены изображений на мобильных устройствах
         function updateImagesForMobile() {
-            const images = document.querySelectorAll('.item img, .swiper-slide img');
+            const images = document.querySelectorAll('.item img');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
                 if (window.innerWidth <= 768 && mobileSrc) {
