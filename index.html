@@ -239,6 +239,35 @@
                 gap: 20px; /* Увеличиваем расстояние между фото */
             }
         }
+
+        /* Стили для портретного режима (скрываем логотипы) */
+        @media (orientation: portrait) and (max-width: 768px) {
+            .header .logo,
+            .logo-overlay {
+                display: none;
+            }
+        }
+
+        /* Стили для ландшафтного режима (показываем логотипы) */
+        @media (orientation: landscape) and (max-width: 768px) {
+            .header .logo,
+            .logo-overlay {
+                display: block;
+            }
+
+            .header .logo img {
+                width: 12vw;
+            }
+
+            .logo-overlay {
+                left: calc(20vw - 50px);
+                top: 20vw;
+            }
+
+            .logo-overlay img {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -364,15 +393,17 @@
             });
         }
 
-        // Функция для смены изображений на мобильных устройствах (исключая слайдер и логотип)
+        // Функция для смены изображений в зависимости от ориентации устройства
         function updateImagesForMobile() {
             const images = document.querySelectorAll('.item img:not(.swiper-slide img):not(.logo-overlay img):not(.logo img)');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
                 const desktopSrc = img.getAttribute('data-desktop');
-                if (window.innerWidth <= 768 && mobileSrc) {
+                if (window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches && mobileSrc) {
+                    // Вертикальная ориентация на мобильных устройствах
                     img.src = mobileSrc;
                 } else if (desktopSrc) {
+                    // Горизонтальная ориентация или десктоп
                     img.src = desktopSrc;
                 }
             });
@@ -381,6 +412,7 @@
         // Вызов функции при загрузке и изменении размера окна
         window.addEventListener('load', updateImagesForMobile);
         window.addEventListener('resize', updateImagesForMobile);
+        window.addEventListener('orientationchange', updateImagesForMobile); // Обработка смены ориентации
     </script>
 </body>
 </html>
