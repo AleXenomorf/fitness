@@ -246,9 +246,20 @@
             .logo-overlay {
                 display: none;
             }
+
+            /* Вертикальный слайдер */
+            .swiper-slide {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .swiper-slide img {
+                width: 80%;
+                max-height: 80%;
+            }
         }
 
-        /* Стили для ландшафтного режима (показываем логотипы) */
+        /* Стили для ландшафтного режима (показываем логотипы и десктопный вид слайдера) */
         @media (orientation: landscape) and (max-width: 768px) {
             .header .logo,
             .logo-overlay {
@@ -266,6 +277,17 @@
 
             .logo-overlay img {
                 width: 80%;
+            }
+
+            /* Десктопный вид слайдера */
+            .swiper-slide {
+                flex-direction: row; /* Слайды горизонтально */
+                gap: 10px; /* Расстояние между фото */
+            }
+
+            .swiper-slide img {
+                width: 40%; /* Ширина изображений как в десктопной версии */
+                max-height: 100%; /* Высота изображений как в десктопной версии */
             }
         }
     </style>
