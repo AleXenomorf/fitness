@@ -239,35 +239,6 @@
                 gap: 20px; /* Увеличиваем расстояние между фото */
             }
         }
-
-        /* Стили для портретного режима (скрываем логотипы) */
-        @media (orientation: portrait) and (max-width: 768px) {
-            .header .logo,
-            .logo-overlay {
-                display: none;
-            }
-        }
-
-        /* Стили для ландшафтного режима (показываем логотипы) */
-        @media (orientation: landscape) and (max-width: 768px) {
-            .header .logo,
-            .logo-overlay {
-                display: block;
-            }
-
-            .header .logo img {
-                width: 12vw;
-            }
-
-            .logo-overlay {
-                left: calc(20vw - 50px);
-                top: 20vw;
-            }
-
-            .logo-overlay img {
-                width: 80%;
-            }
-        }
     </style>
 </head>
 <body>
