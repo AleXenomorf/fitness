@@ -218,9 +218,21 @@
                 object-fit: contain; /* Сохраняем пропорции изображений */
             }
 
+            /* Кнопка "Наверх" в виде стрелки */
             .scroll-to-top {
                 font-size: 14px;
-                padding: 8px 16px;
+                padding: 8px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .scroll-to-top::before {
+                content: "↑"; /* Стрелка вверх */
+                font-size: 20px;
             }
 
             /* Скрываем логотип на мобильной версии */
@@ -239,17 +251,21 @@
                 gap: 20px; /* Увеличиваем расстояние между фото */
             }
 
-            /* Уменьшаем logo10.webp в два раза в мобильной версии */
+            /* Уменьшаем logo10.webp на 20% в мобильной версии */
             .logos-container img[src*="logo10.webp"] {
-                width: 38px; /* Уменьшение ширины в два раза */
-                height: 25px; /* Уменьшение высоты в два раза */
+                width: 60.8px; /* Уменьшение ширины на 20% (76px * 0.8) */
+                height: 40px; /* Уменьшение высоты на 20% (50px * 0.8) */
             }
 
-            /* Увеличиваем logo8.jpg и logo9.png в два раза */
-            .logos-container img[src*="logo8.jpg"],
-            .logos-container img[src*="logo9.png"] {
-                width: 100px; /* Увеличение ширины в два раза */
-                height: 100px; /* Увеличение высоты в два раза */
+            /* Уменьшаем logo8.jpg на 20% в мобильной версии */
+            .logos-container img[src*="logo8.jpg"] {
+                width: 80px; /* Уменьшение ширины на 20% (100px * 0.8) */
+                height: 80px; /* Уменьшение высоты на 20% (100px * 0.8) */
+            }
+
+            /* Сдвигаем logo8.jpg и logo9.png левее */
+            .logos-container {
+                left: 45%; /* Сдвиг влево */
             }
         }
 
@@ -438,7 +454,7 @@
     </div>
 
     <!-- Кнопка "Наверх" -->
-    <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
     <!-- Подключение Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
