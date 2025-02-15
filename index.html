@@ -301,6 +301,28 @@
                 top: 55%; /* Сдвигаем слайдер вниз на 5% (50% + 5%) */
             }
         }
+
+        /* Стили для логотипов на images10/mob10 */
+        .logos-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 10px; /* Расстояние между логотипами */
+            z-index: 10;
+        }
+
+        .logos-container img {
+            width: auto;
+            height: 50px; /* Фиксированная высота для всех логотипов */
+        }
+
+        /* Логотип logo10.webp шире, поэтому задаем ему отдельную ширину */
+        .logos-container img[src*="logo10.webp"] {
+            width: 76px; /* Ширина logo10.webp */
+            height: 50px; /* Высота logo10.webp */
+        }
     </style>
 </head>
 <body>
@@ -384,7 +406,14 @@
             <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.png" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
         </div>
         <div class="item" id="contacts-section">
-            <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.png" alt="Image 10">
+            <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.jpg" alt="Image 10">
+
+            <!-- Контейнер для логотипов -->
+            <div class="logos-container">
+                <img src="https://alexenomorf.github.io/fitness/logo8.png" alt="Logo 8">
+                <img src="https://alexenomorf.github.io/fitness/logo9.png" alt="Logo 9">
+                <img src="https://alexenomorf.github.io/fitness/logo10.webp" alt="Logo 10">
+            </div>
         </div>
     </div>
 
