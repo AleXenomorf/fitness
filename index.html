@@ -309,7 +309,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
-            gap: 10px; /* Расстояние между логотипами */
+            gap: 10px; /* Расстояние между логотипами по умолчанию */
             z-index: 10;
         }
 
@@ -322,6 +322,13 @@
         .logos-container img[src*="logo10.webp"] {
             width: 76px; /* Ширина logo10.webp */
             height: 50px; /* Высота logo10.webp */
+        }
+
+        /* Увеличиваем расстояние между логотипами в десктопной версии */
+        @media (min-width: 769px) {
+            .logos-container {
+                gap: 100px; /* Расстояние между логотипами 100px */
+            }
         }
     </style>
 </head>
