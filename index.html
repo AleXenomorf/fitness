@@ -147,6 +147,27 @@
             display: block;
         }
 
+        /* Кнопка "ВСТУПИТЬ В КОМАНДУ" */
+        .join-button {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 50px;
+            background-color: #22ECE1; /* Бирюзовый цвет */
+            border: none;
+            border-radius: 25px; /* Закругленные края */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
         /* Адаптация под мобильные устройства */
         @media (max-width: 1024px) {
             /* Скрываем надписи на images1 */
@@ -270,6 +291,11 @@
             /* Сдвигаем logo8.jpg левее на 10px */
             .logos-container img[src*="logo8.jpg"] {
                 margin-left: -10px; /* Сдвиг влево на 10px */
+            }
+
+            /* Кнопка "ВСТУПИТЬ В КОМАНДУ" в мобильной версии */
+            .join-button {
+                bottom: 10px; /* Отступ снизу 10px */
             }
         }
 
