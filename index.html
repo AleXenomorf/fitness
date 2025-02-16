@@ -8,6 +8,9 @@
     <!-- Подключаем Swiper.js (слайдер) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
+    <!-- Подключаем Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body, html {
             margin: 0;
@@ -176,6 +179,45 @@
             transition: background-color 0.3s, transform 0.3s;
         }
 
+        /* Стили для контейнера с иконками */
+        .logos-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 20px; /* Расстояние между иконками */
+            z-index: 10;
+        }
+
+        /* Стили для ссылок с иконками */
+        .icon-link {
+            color: white; /* Белый цвет иконок */
+            font-size: 50px; /* Размер иконок */
+            text-decoration: none; /* Убираем подчеркивание */
+            transition: color 0.3s, transform 0.3s; /* Плавные переходы */
+        }
+
+        /* Анимация при наведении */
+        .icon-link:hover {
+            color: #22ECE1; /* Бирюзовый цвет при наведении */
+            transform: scale(1.1); /* Увеличение иконки */
+        }
+
+        /* Увеличиваем расстояние между иконками в десктопной версии */
+        @media (min-width: 769px) {
+            .logos-container {
+                gap: 100px; /* Расстояние между иконками 100px */
+            }
+        }
+
+        /* Уменьшаем размер иконок в мобильной версии */
+        @media (max-width: 768px) {
+            .icon-link {
+                font-size: 30px; /* Уменьшенный размер иконок */
+            }
+        }
+
         /* Адаптация под мобильные устройства */
         @media (max-width: 1024px) {
             /* Скрываем надписи на images1 */
@@ -279,32 +321,6 @@
                 flex-direction: column; /* Слайды вертикально */
                 gap: 20px; /* Увеличиваем расстояние между фото */
             }
-
-            /* Уменьшаем logo8.jpg и logo10.webp в два раза в мобильной версии */
-            .logos-container img[src*="logo8.jpg"] {
-                width: 50px; /* Уменьшение ширины в два раза (100px / 2) */
-                height: 50px; /* Уменьшение высоты в два раза (100px / 2) */
-            }
-
-            .logos-container img[src*="logo10.webp"] {
-                width: 30px !important; /* Уменьшение ширины до 30px */
-                height: 25px !important; /* Уменьшение высоты до 25px */
-            }
-
-            /* Увеличиваем расстояние между логотипами */
-            .logos-container {
-                gap: 20px; /* Увеличение расстояния между логотипами */
-            }
-
-            /* Сдвигаем logo8.jpg левее на 10px */
-            .logos-container img[src*="logo8.jpg"] {
-                margin-left: -10px; /* Сдвиг влево на 10px */
-            }
-
-            /* Кнопка "ВСТУПИТЬ В КОМАНДУ" в мобильной версии */
-            .join-button {
-                bottom: 10px; /* Отступ снизу 10px */
-            }
         }
 
         /* Стили для портретного режима (скрываем логотипы) */
@@ -366,35 +382,6 @@
             /* Опускаем слайдер на 20px, чтобы текст не накладывался */
             .slider-wrapper {
                 top: 55%; /* Сдвигаем слайдер вниз на 5% (50% + 5%) */
-            }
-        }
-
-        /* Стили для логотипов на images10/mob10 */
-        .logos-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            gap: 10px; /* Расстояние между логотипами по умолчанию */
-            z-index: 10;
-        }
-
-        .logos-container img {
-            width: auto;
-            height: 50px; /* Фиксированная высота для всех логотипов */
-        }
-
-        /* Логотип logo10.webp шире, поэтому задаем ему отдельную ширину */
-        .logos-container img[src*="logo10.webp"] {
-            width: 76px; /* Ширина logo10.webp */
-            height: 50px; /* Высота logo10.webp */
-        }
-
-        /* Увеличиваем расстояние между логотипами в десктопной версии */
-        @media (min-width: 769px) {
-            .logos-container {
-                gap: 100px; /* Расстояние между логотипами 100px */
             }
         }
     </style>
@@ -469,26 +456,35 @@
         </div>
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images6.png" data-desktop="https://alexenomorf.github.io/fitness/images6.png" data-mobile="https://alexenomorf.github.io/fitness/mob6.jpg" alt="Image 6">
-                 </div>
+        </div>
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images7.png" data-desktop="https://alexenomorf.github.io/fitness/images7.png" data-mobile="https://alexenomorf.github.io/fitness/mob7.jpg" alt="Image 7">
         </div>
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images8.jpg" data-desktop="https://alexenomorf.github.io/fitness/images8.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob8.jpg" alt="Image 8">
         </div>
-        <div class="item" id="prices-section">
-            <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
+        <div class="item" id="prices-section"> 
+                        <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
             <!-- Кнопка "ВСТУПИТЬ В КОМАНДУ" -->
             <a href="#" class="join-button">ВСТУПИТЬ В КОМАНДУ</a>
         </div>
         <div class="item" id="contacts-section">
             <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.png" alt="Image 10">
 
-            <!-- Контейнер для логотипов -->
+            <!-- Контейнер для иконок -->
             <div class="logos-container">
-                <img src="https://alexenomorf.github.io/fitness/logo8.jpg" alt="Logo 8">
-                <img src="https://alexenomorf.github.io/fitness/logo9.png" alt="Logo 9">
-                <img src="https://alexenomorf.github.io/fitness/logo10.webp" alt="Logo 10">
+                <!-- Иконка Telegram -->
+                <a href="https://t.me/your_telegram_link" target="_blank" class="icon-link">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <!-- Иконка Instagram -->
+                <a href="https://www.instagram.com/your_instagram_link" target="_blank" class="icon-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Иконка Email (конверт) -->
+                <a href="mailto:your_email@example.com" class="icon-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
     </div>
