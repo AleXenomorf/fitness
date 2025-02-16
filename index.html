@@ -168,6 +168,13 @@
             z-index: 10;
         }
 
+        /* Анимация при наведении */
+        .join-button:hover {
+            background-color: #1cc7b8; /* Темнее бирюзовый */
+            transform: translateX(-50%) scale(1.05); /* Увеличение кнопки */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
         /* Адаптация под мобильные устройства */
         @media (max-width: 1024px) {
             /* Скрываем надписи на images1 */
@@ -463,13 +470,15 @@
             <img src="https://alexenomorf.github.io/fitness/images6.png" data-desktop="https://alexenomorf.github.io/fitness/images6.png" data-mobile="https://alexenomorf.github.io/fitness/mob6.jpg" alt="Image 6">
         </div>
         <div class="item">
-            <img src="https://alexenomorf.github.io/fitness/images7.png" data-desktop="https://alexenomorf.github.io/fitness/images7.png" data-mobile="https://alexenomorf.github.io/fitness/mob7.jpg" alt="Image 7">
+                        <img src="https://alexenomorf.github.io/fitness/images7.png" data-desktop="https://alexenomorf.github.io/fitness/images7.png" data-mobile="https://alexenomorf.github.io/fitness/mob7.jpg" alt="Image 7">
         </div>
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images8.jpg" data-desktop="https://alexenomorf.github.io/fitness/images8.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob8.jpg" alt="Image 8">
         </div>
         <div class="item" id="prices-section">
             <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
+            <!-- Кнопка "ВСТУПИТЬ В КОМАНДУ" -->
+            <a href="#" class="join-button">ВСТУПИТЬ В КОМАНДУ</a>
         </div>
         <div class="item" id="contacts-section">
             <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.png" alt="Image 10">
