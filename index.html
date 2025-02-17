@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фитнес сайт</title>
 
-    
+    <!-- Подключение Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    
+    <!-- Подключение Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -20,7 +20,7 @@
             scroll-behavior: smooth;
         }
 
-        
+        /* Стили для шапки */
         .header {
             position: absolute;
             top: 2.5vw;
@@ -43,7 +43,7 @@
             color: black;
         }
 
-        
+        /* Стили для контейнера */
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -61,7 +61,7 @@
             object-fit: cover;
         }
 
-        
+        /* Стили для логотипа поверх изображения */
         .logo-overlay {
             position: absolute;
             top: 15vw;
@@ -74,7 +74,7 @@
             height: auto;
         }
 
-        /
+        /* Стили для текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
         .results-text {
             position: absolute;
             top: 20px; 
@@ -90,7 +90,7 @@
         .results { color: #FFFFFF; }
         .students { color: #22ECE1; }
 
-        
+        /* Стили для слайдера */
         .slider-wrapper {
             position: absolute;
             top: 50%;
@@ -125,13 +125,13 @@
             object-position: top; 
         }
 
-        
+        /* Стили для кнопок слайдера */
         .swiper-button-next,
         .swiper-button-prev {
             color: #22ECE1;
         }
 
-        
+        /* Стили для кнопки "Наверх" */
         .scroll-to-top {
             position: fixed;
             bottom: 20px;
@@ -150,7 +150,7 @@
             display: block;
         }
 
-        
+        /* Стили для кнопки "Вступить в команду" */
         .join-button {
             position: absolute;
             left: 50%;
@@ -172,14 +172,14 @@
             bottom: 10px;
         }
 
-        
+        /* Эффект при наведении на кнопку */
         .join-button:hover {
             background-color: #1cc7b8; 
             transform: translateX(-50%) scale(1.05); 
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        
+        /* Стили для контейнера с иконками соцсетей */
         .logos-container {
             position: absolute;
             top: 50%;
@@ -190,7 +190,7 @@
             z-index: 10;
         }
 
-       
+        /* Стили для иконок соцсетей */
         .icon-link {
             color: white; 
             font-size: 50px; 
@@ -198,44 +198,44 @@
             transition: color 0.3s, transform 0.3s; 
         }
 
-        
+        /* Эффект при наведении на иконки */
         .icon-link:hover {
             color: #22ECE1; 
             transform: scale(1.1); 
         }
 
-       
+        /* Адаптация для больших экранов */
         @media (min-width: 769px) {
             .logos-container {
                 gap: 100px; 
             }
         }
 
-        
+        /* Адаптация для мобильных устройств */
         @media (max-width: 768px) {
             .icon-link {
                 font-size: 30px; 
             }
         }
 
-        
+        /* Адаптация для планшетов */
         @media (max-width: 1024px) {
-            
+            /* Скрытие ссылок в шапке */
             .header .nav-link {
                 display: none;
             }
 
-            
+            /* Позиционирование шапки */
             .header {
                 left: 10vw; 
             }
 
-            
+            /* Размер логотипа */
             .logo img {
                 width: 12vw;
             }
 
-            
+            /* Позиционирование логотипа поверх изображения */
             .logo-overlay {
                 left: calc(20vw - 50px);
                 top: 20vw; 
@@ -244,13 +244,13 @@
                 width: 80%; 
             }
 
-            
+            /* Размер текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
             .results-text {
                 font-size: 3.5vw;
                 top: 15px;
             }
 
-           
+            /* Размер слайдера */
             .slider-wrapper {
                 width: 90%;
                 height: 70%;
@@ -262,7 +262,7 @@
         }
 
         @media (max-width: 768px) {
-           
+            /* Адаптация шапки */
             .header {
                 top: 5vw;
                 left: 5vw;
@@ -289,7 +289,7 @@
                 object-fit: contain; 
             }
 
-           
+            /* Адаптация кнопки "Наверх" */
             .scroll-to-top {
                 font-size: 14px;
                 padding: 8px;
@@ -306,31 +306,30 @@
                 font-size: 20px;
             }
 
-           
+            /* Скрытие логотипа поверх изображения */
             .logo-overlay {
                 display: none;
             }
 
-           
+            /* Скрытие логотипа в шапке */
             .header .logo {
                 display: none;
             }
 
-           
+            /* Вертикальное расположение слайдов */
             .swiper-slide {
                 flex-direction: column;
                 gap: 20px; 
             }
         }
 
-       
+        /* Адаптация для портретной ориентации */
         @media (orientation: portrait) and (max-width: 768px) {
             .header .logo,
             .logo-overlay {
                 display: none;
             }
 
-           
             .swiper-slide {
                 flex-direction: column;
                 gap: 20px;
@@ -342,7 +341,7 @@
             }
         }
 
-       
+        /* Адаптация для ландшафтной ориентации */
         @media (orientation: landscape) and (max-width: 768px) {
             .header .logo,
             .logo-overlay {
@@ -362,7 +361,6 @@
                 width: 80%;
             }
 
-           
             .swiper-slide {
                 flex-direction: row; 
                 gap: 10px; 
@@ -373,13 +371,11 @@
                 max-height: 100%; 
             }
 
-           
             .results-text {
                 font-size: 1.67vw; 
                 top: 25px; 
             }
 
-           
             .slider-wrapper {
                 top: 55%; 
             }
@@ -388,7 +384,7 @@
 </head>
 <body>
 
-   
+    <!-- Шапка сайта -->
     <div class="header">
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
@@ -400,8 +396,9 @@
         <a href="#contacts-section" class="nav-link">КОНТАКТЫ</a>
     </div>
 
+    <!-- Контейнер с изображениями и элементами -->
     <div class="container">
-       
+        <!-- Первый блок -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images1.png" data-desktop="https://alexenomorf.github.io/fitness/images1.png" data-mobile="https://alexenomorf.github.io/fitness/mob1.png" alt="Image 1">
             <div class="logo-overlay">
@@ -409,26 +406,27 @@
             </div>
         </div>
 
+        <!-- Второй блок -->
         <div class="item" id="about-section">
             <img src="https://alexenomorf.github.io/fitness/images2.png" data-desktop="https://alexenomorf.github.io/fitness/images2.png" data-mobile="https://alexenomorf.github.io/fitness/mob2.png" alt="Image 2">
         </div>
 
-        
+        <!-- Третий блок -->
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images3.png" data-desktop="https://alexenomorf.github.io/fitness/images3.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 3">
         </div>
 
-        
+        <!-- Четвертый блок с слайдером -->
         <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 4"> 
 
-            
+            <!-- Текст "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" -->
             <div class="results-text">
                 <span class="results">РЕЗУЛЬТАТЫ</span>
                 <span class="students">ПОДОПЕЧНЫХ</span>
             </div>
 
-            
+            <!-- Слайдер -->
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -451,6 +449,7 @@
             </div>
         </div>
 
+        <!-- Остальные блоки -->
         <div class="item" id="cb-club-section">
             <img src="https://alexenomorf.github.io/fitness/images5.jpg" data-desktop="https://alexenomorf.github.io/fitness/images5.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob5.jpg" alt="Image 5">
         </div>
@@ -464,24 +463,22 @@
             <img src="https://alexenomorf.github.io/fitness/images8.jpg" data-desktop="https://alexenomorf.github.io/fitness/images8.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob8.jpg" alt="Image 8">
         </div>
         <div class="item" id="prices-section">
-            <img src="https://alexenomorf.github.io/fitness/images9.png"            data-desktop="https://alexenomorf.github.io/fitness/images9.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
+            <img src="https://alexenomorf.github.io/fitness/images9.png" data-desktop="https://alexenomorf.github.io/fitness/images9.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
             
+            <!-- Кнопка "Вступить в команду" -->
             <a href="https://www.instagram.com/cult.of.the.body/?igsh=dGJ3NTNwcnhocnRo&utm_source=qr" class="join-button" target="_blank">ВСТУПИТЬ В КОМАНДУ</a>
         </div>
         <div class="item" id="contacts-section">
             <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.png" alt="Image 10">
 
-            
+            <!-- Иконки соцсетей -->
             <div class="logos-container">
-               
                 <a href="https://t.me/Lebedos73" target="_blank" class="icon-link">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
-                
                 <a href="https://www.instagram.com/cult.of.the.body/?igsh=dGJ3NTNwcnhocnRo&utm_source=qr" target="_blank" class="icon-link">
                     <i class="fab fa-instagram"></i>
                 </a>
-                
                 <a href="mailto:cultofthebody@gmail.com" class="icon-link">
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -489,14 +486,21 @@
         </div>
     </div>
 
-   
+    <!-- Кнопка "Наверх" -->
     <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
-    
+    <!-- Скрытая подпись -->
+    <div style="position: fixed; bottom: 10px; right: 10px; opacity: 0.3; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.3'">
+        <a href="https://t.me/xenomorf1" target="_blank" style="text-decoration: none; color: #000;">
+            Разработано [Ваши инициалы]
+        </a>
+    </div>
+
+    <!-- Подключение Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        
+        // Инициализация слайдера
         const swiper = new Swiper('.swiper', {
             loop: true,
             autoplay: {
@@ -509,7 +513,7 @@
             },
         });
 
-        
+        // Показ кнопки "Наверх" при прокрутке
         window.onscroll = function() {
             const scrollToTopButton = document.querySelector('.scroll-to-top');
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -519,7 +523,7 @@
             }
         };
 
-        
+        // Функция для прокрутки вверх
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -527,23 +531,21 @@
             });
         }
 
-        
+        // Обновление изображений для мобильных устройств
         function updateImagesForMobile() {
             const images = document.querySelectorAll('.item img:not(.swiper-slide img):not(.logo-overlay img):not(.logo img)');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
                 const desktopSrc = img.getAttribute('data-desktop');
                 if (window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches && mobileSrc) {
-                    
                     img.src = mobileSrc;
                 } else if (desktopSrc) {
-                   
                     img.src = desktopSrc;
                 }
             });
         }
 
-       
+        // Обработчики событий для обновления изображений
         window.addEventListener('load', updateImagesForMobile);
         window.addEventListener('resize', updateImagesForMobile);
         window.addEventListener('orientationchange', updateImagesForMobile); 
