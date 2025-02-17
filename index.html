@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фитнес сайт</title>
 
-    <!-- Подключаем Swiper.js (слайдер) -->
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    <!-- Подключаем Font Awesome -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -20,7 +20,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Логотип + навигация */
+        
         .header {
             position: absolute;
             top: 2.5vw;
@@ -43,7 +43,7 @@
             color: black;
         }
 
-        /* Контейнер */
+        
         .container {
             display: grid;
             grid-template-columns: 1fr;
@@ -61,7 +61,7 @@
             object-fit: cover;
         }
 
-        /* Логотип на images1 */
+        
         .logo-overlay {
             position: absolute;
             top: 15vw;
@@ -74,23 +74,23 @@
             height: auto;
         }
 
-        /* "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+        /
         .results-text {
             position: absolute;
-            top: 20px; /* Фиксированное расстояние сверху */
+            top: 20px; 
             left: 50%;
             transform: translateX(-50%);
             font-weight: bold;
-            font-size: 2.5vw; /* Размер шрифта зависит от ширины экрана */
+            font-size: 2.5vw; 
             display: flex;
-            gap: 1vw; /* Расстояние между словами */
+            gap: 1vw; 
             z-index: 10;
         }
 
         .results { color: #FFFFFF; }
         .students { color: #22ECE1; }
 
-        /* Слайдер */
+        
         .slider-wrapper {
             position: absolute;
             top: 50%;
@@ -121,17 +121,17 @@
             max-height: 100%;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover; /* Обрезаем изображение */
-            object-position: top; /* Приоритет верхней части */
+            object-fit: cover; 
+            object-position: top; 
         }
 
-        /* Кнопки навигации Swiper */
+        
         .swiper-button-next,
         .swiper-button-prev {
             color: #22ECE1;
         }
 
-        /* Кнопка "Наверх" */
+        
         .scroll-to-top {
             position: fixed;
             bottom: 20px;
@@ -150,16 +150,16 @@
             display: block;
         }
 
-        /* Кнопка "ВСТУПИТЬ В КОМАНДУ" */
+        
         .join-button {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             width: 260px;
             height: 50px;
-            background-color: #22ECE1; /* Бирюзовый цвет */
+            background-color: #22ECE1; 
             border: none;
-            border-radius: 25px; /* Закругленные края */
+            border-radius: 25px; 
             color: white;
             font-size: 16px;
             font-weight: bold;
@@ -169,88 +169,88 @@
             text-decoration: none;
             cursor: pointer;
             z-index: 10;
-            bottom: 10px; /* Отступ снизу для всех версий */
+            bottom: 10px;
         }
 
-        /* Анимация при наведении */
+        
         .join-button:hover {
-            background-color: #1cc7b8; /* Темнее бирюзовый */
-            transform: translateX(-50%) scale(1.05); /* Увеличение кнопки */
+            background-color: #1cc7b8; 
+            transform: translateX(-50%) scale(1.05); 
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        /* Стили для контейнера с иконками */
+        
         .logos-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
-            gap: 20px; /* Расстояние между иконками */
+            gap: 20px; 
             z-index: 10;
         }
 
-        /* Стили для ссылок с иконками */
+       
         .icon-link {
-            color: white; /* Белый цвет иконок */
-            font-size: 50px; /* Размер иконок */
-            text-decoration: none; /* Убираем подчеркивание */
-            transition: color 0.3s, transform 0.3s; /* Плавные переходы */
+            color: white; 
+            font-size: 50px; 
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s; 
         }
 
-        /* Анимация при наведении */
+        
         .icon-link:hover {
-            color: #22ECE1; /* Бирюзовый цвет при наведении */
-            transform: scale(1.1); /* Увеличение иконки */
+            color: #22ECE1; 
+            transform: scale(1.1); 
         }
 
-        /* Увеличиваем расстояние между иконками в десктопной версии */
+       
         @media (min-width: 769px) {
             .logos-container {
-                gap: 100px; /* Расстояние между иконками 100px */
+                gap: 100px; 
             }
         }
 
-        /* Уменьшаем размер иконок в мобильной версии */
+        
         @media (max-width: 768px) {
             .icon-link {
-                font-size: 30px; /* Уменьшенный размер иконок */
+                font-size: 30px; 
             }
         }
 
-        /* Адаптация под мобильные устройства */
+        
         @media (max-width: 1024px) {
-            /* Скрываем надписи на images1 */
+            
             .header .nav-link {
                 display: none;
             }
 
-            /* Сдвигаем логотип вправо */
+            
             .header {
-                left: 10vw; /* Сдвиг вправо */
+                left: 10vw; 
             }
 
-            /* Уменьшаем размер логотипа */
+            
             .logo img {
                 width: 12vw;
             }
 
-            /* Второй логотип: сдвигаем вправо на 50px, уменьшаем на 20% и опускаем ниже */
+            
             .logo-overlay {
-                left: calc(20vw - 50px); /* Сдвиг вправо на 50px */
-                top: 20vw; /* Опускаем ниже */
+                left: calc(20vw - 50px);
+                top: 20vw; 
             }
             .logo-overlay img {
-                width: 80%; /* Уменьшение на 20% */
+                width: 80%; 
             }
 
-            /* Адаптация текста "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" */
+            
             .results-text {
                 font-size: 3.5vw;
                 top: 15px;
             }
 
-            /* Адаптация слайдера */
+           
             .slider-wrapper {
                 width: 90%;
                 height: 70%;
@@ -262,7 +262,7 @@
         }
 
         @media (max-width: 768px) {
-            /* Дополнительные стили для мобильных устройств */
+           
             .header {
                 top: 5vw;
                 left: 5vw;
@@ -274,22 +274,22 @@
             }
 
             .results-text {
-                font-size: 6vw; /* Увеличенный размер шрифта для мобильных (в полтора раза) */
-                top: 10px; /* Меньшее расстояние сверху для мобильных */
+                font-size: 6vw; 
+                top: 10px; 
             }
 
             .slider-wrapper {
                 width: 95%;
-                height: 80%; /* Увеличиваем высоту слайдера */
+                height: 80%; 
             }
 
             .swiper-slide img {
-                width: 80%; /* Уменьшаем ширину изображений на 20% */
-                max-height: 80%; /* Уменьшаем высоту изображений на 20% */
-                object-fit: contain; /* Сохраняем пропорции изображений */
+                width: 80%; 
+                max-height: 80%; 
+                object-fit: contain; 
             }
 
-            /* Кнопка "Наверх" в виде стрелки */
+           
             .scroll-to-top {
                 font-size: 14px;
                 padding: 8px;
@@ -302,35 +302,35 @@
             }
 
             .scroll-to-top::before {
-                content: "↑"; /* Стрелка вверх */
+                content: "↑"; 
                 font-size: 20px;
             }
 
-            /* Скрываем логотип на мобильной версии */
+           
             .logo-overlay {
                 display: none;
             }
 
-            /* Убираем логотип logo1 из мобильной версии */
+           
             .header .logo {
                 display: none;
             }
 
-            /* Адаптация слайдера для мобильной версии */
+           
             .swiper-slide {
-                flex-direction: column; /* Слайды вертикально */
-                gap: 20px; /* Увеличиваем расстояние между фото */
+                flex-direction: column;
+                gap: 20px; 
             }
         }
 
-        /* Стили для портретного режима (скрываем логотипы) */
+       
         @media (orientation: portrait) and (max-width: 768px) {
             .header .logo,
             .logo-overlay {
                 display: none;
             }
 
-            /* Вертикальный слайдер */
+           
             .swiper-slide {
                 flex-direction: column;
                 gap: 20px;
@@ -342,7 +342,7 @@
             }
         }
 
-        /* Стили для ландшафтного режима (показываем логотипы и десктопный вид слайдера) */
+       
         @media (orientation: landscape) and (max-width: 768px) {
             .header .logo,
             .logo-overlay {
@@ -362,33 +362,33 @@
                 width: 80%;
             }
 
-            /* Десктопный вид слайдера */
+           
             .swiper-slide {
-                flex-direction: row; /* Слайды горизонтально */
-                gap: 10px; /* Расстояние между фото */
+                flex-direction: row; 
+                gap: 10px; 
             }
 
             .swiper-slide img {
-                width: 40%; /* Ширина изображений как в десктопной версии */
-                max-height: 100%; /* Высота изображений как в десктопной версии */
+                width: 40%; 
+                max-height: 100%; 
             }
 
-            /* Уменьшаем текст "РЕЗУЛЬТАТЫ ПОДОПЕЧНЫХ" в полтора раза и приподнимаем на 5px */
+           
             .results-text {
-                font-size: 1.67vw; /* Уменьшение в полтора раза (2.5vw / 1.5) */
-                top: 25px; /* Приподнимаем на 5px (20px + 5px) */
+                font-size: 1.67vw; 
+                top: 25px; 
             }
 
-            /* Опускаем слайдер на 20px, чтобы текст не накладывался */
+           
             .slider-wrapper {
-                top: 55%; /* Сдвигаем слайдер вниз на 5% (50% + 5%) */
+                top: 55%; 
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Логотип + ссылки -->
+   
     <div class="header">
         <div class="logo">
             <img src="https://alexenomorf.github.io/fitness/logo1.png" alt="Логотип">
@@ -401,7 +401,7 @@
     </div>
 
     <div class="container">
-        <!-- images1 -->
+       
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images1.png" data-desktop="https://alexenomorf.github.io/fitness/images1.png" data-mobile="https://alexenomorf.github.io/fitness/mob1.png" alt="Image 1">
             <div class="logo-overlay">
@@ -413,22 +413,22 @@
             <img src="https://alexenomorf.github.io/fitness/images2.png" data-desktop="https://alexenomorf.github.io/fitness/images2.png" data-mobile="https://alexenomorf.github.io/fitness/mob2.png" alt="Image 2">
         </div>
 
-        <!-- Добавлено images3 для десктопной версии -->
+        
         <div class="item">
             <img src="https://alexenomorf.github.io/fitness/images3.png" data-desktop="https://alexenomorf.github.io/fitness/images3.png" data-mobile="https://alexenomorf.github.io/fitness/mob3.jpg" alt="Image 3">
         </div>
 
-        <!-- Секция слайдера -->
+        
         <div class="item" id="slider-section">
             <img src="https://alexenomorf.github.io/fitness/images4.png" data-desktop="https://alexenomorf.github.io/fitness/images4.png" data-mobile="https://alexenomorf.github.io/fitness/mob4.png" alt="Image 4"> 
 
-            <!-- Заголовок -->
+            
             <div class="results-text">
                 <span class="results">РЕЗУЛЬТАТЫ</span>
                 <span class="students">ПОДОПЕЧНЫХ</span>
             </div>
 
-            <!-- Слайдер -->
+            
             <div class="slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -465,23 +465,23 @@
         </div>
         <div class="item" id="prices-section">
             <img src="https://alexenomorf.github.io/fitness/images9.png"            data-desktop="https://alexenomorf.github.io/fitness/images9.jpg" data-mobile="https://alexenomorf.github.io/fitness/mob9.jpg" alt="Image 9">
-            <!-- Кнопка "ВСТУПИТЬ В КОМАНДУ" -->
+            
             <a href="https://www.instagram.com/cult.of.the.body/?igsh=dGJ3NTNwcnhocnRo&utm_source=qr" class="join-button" target="_blank">ВСТУПИТЬ В КОМАНДУ</a>
         </div>
         <div class="item" id="contacts-section">
             <img src="https://alexenomorf.github.io/fitness/images10.png" data-desktop="https://alexenomorf.github.io/fitness/images10.png" data-mobile="https://alexenomorf.github.io/fitness/mob10.png" alt="Image 10">
 
-            <!-- Контейнер для иконок -->
+            
             <div class="logos-container">
-                <!-- Иконка Telegram -->
+               
                 <a href="https://t.me/Lebedos73" target="_blank" class="icon-link">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
-                <!-- Иконка Instagram -->
+                
                 <a href="https://www.instagram.com/cult.of.the.body/?igsh=dGJ3NTNwcnhocnRo&utm_source=qr" target="_blank" class="icon-link">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <!-- Иконка Email (конверт) -->
+                
                 <a href="mailto:cultofthebody@gmail.com" class="icon-link">
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -489,19 +489,19 @@
         </div>
     </div>
 
-    <!-- Кнопка "Наверх" -->
+   
     <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
-    <!-- Подключение Swiper.js -->
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // Инициализация Swiper
+        
         const swiper = new Swiper('.swiper', {
             loop: true,
             autoplay: {
-                delay: 3000, // Задержка между слайдами (3 секунды)
-                disableOnInteraction: false, // Автоплей не останавливается при взаимодействии
+                delay: 3000, 
+                disableOnInteraction: false, 
             },
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -509,7 +509,7 @@
             },
         });
 
-        // Показ/скрытие кнопки "Наверх"
+        
         window.onscroll = function() {
             const scrollToTopButton = document.querySelector('.scroll-to-top');
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -519,7 +519,7 @@
             }
         };
 
-        // Функция для прокрутки вверх
+        
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -527,26 +527,26 @@
             });
         }
 
-        // Функция для смены изображений в зависимости от ориентации устройства
+        
         function updateImagesForMobile() {
             const images = document.querySelectorAll('.item img:not(.swiper-slide img):not(.logo-overlay img):not(.logo img)');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
                 const desktopSrc = img.getAttribute('data-desktop');
                 if (window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches && mobileSrc) {
-                    // Вертикальная ориентация на мобильных устройствах
+                    
                     img.src = mobileSrc;
                 } else if (desktopSrc) {
-                    // Горизонтальная ориентация или десктоп
+                   
                     img.src = desktopSrc;
                 }
             });
         }
 
-        // Вызов функции при загрузке и изменении размера окна
+       
         window.addEventListener('load', updateImagesForMobile);
         window.addEventListener('resize', updateImagesForMobile);
-        window.addEventListener('orientationchange', updateImagesForMobile); // Обработка смены ориентации
+        window.addEventListener('orientationchange', updateImagesForMobile); 
     </script>
 </body>
 </html>
