@@ -505,13 +505,18 @@
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
+        // Функция для определения ориентации устройства
+        function isLandscape() {
+            return window.matchMedia("(orientation: landscape)").matches;
+        }
+
         // Функция для установки правильного источника изображений
         function setImageSources() {
             const images = document.querySelectorAll('.item img:not(.swiper-slide img):not(.logo-overlay img):not(.logo img)');
             images.forEach(img => {
                 const mobileSrc = img.getAttribute('data-mobile');
                 const desktopSrc = img.getAttribute('data-desktop');
-                if (isMobileDevice() && mobileSrc) {
+                if (isMobileDevice() && !isLandscape() && mobileSrc) {
                     img.src = mobileSrc; // Загружаем мобильную версию
                 } else if (desktopSrc) {
                     img.src = desktopSrc; // Загружаем десктопную версию
@@ -521,6 +526,14 @@
 
         // Устанавливаем источники изображений до загрузки страницы
         setImageSources();
+
+        // Обновляем изображения при изменении ориентации
+        window.addEventListener("orientationchange", () => {
+            // Принудительно обновляем изображения
+            setImageSources();
+            // Перезагружаем страницу для применения стилей
+            window.location.reload();
+        });
 
         // Инициализация слайдера
         const swiper = new Swiper('.swiper', {
