@@ -1,44 +1,65 @@
 import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, CreditCard } from "lucide-react";
+import { ShoppingCart, User, CreditCard } from "lucide-react";
+import { Input } from "@/components/ui/input";
 import { useRouter } from "next/router";
 
-export default function CartPage() {
-  const [cart, setCart] = useState([
-    { id: 1, name: "Яблоко", price: 500 },
-    { id: 2, name: "Банан", price: 600 }
-  ]);
-  const [paymentMethod, setPaymentMethod] = useState("card");
+const products = [
+  { id: 1, name: "Яблоко", price: 500, image: "/apple.jpg", category: "Фрукты" },
+  { id: 2, name: "Банан", price: 600, image: "/banana.jpg", category: "Фрукты" },
+  { id: 3, name: "Апельсин", price: 700, image: "/orange.jpg", category: "Фрукты" },
+  { id: 4, name: "Морковь", price: 300, image: "/carrot.jpg", category: "Овощи" }
+];
+
+export default function FruitShop() {
+  const [cart, setCart] = useState([]);
+  const [user, setUser] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handlePayment = () => {
-    alert(`Оплата произведена методом: ${paymentMethod}`);
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  const handleLogin = () => {
+    setUser({ email });
   };
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4 text-center">🛒 Ваша корзина</h1>
-      {cart.length === 0 ? (
-        <p className="text-center">Корзина пуста</p>
+      <h1 className="text-3xl font-bold mb-4 text-center">🍎 Магазин Фруктов и Овощей 🍊</h1>
+      {user ? (
+        <p className="mb-4 text-center">Добро пожаловать, {user.email}</p>
       ) : (
-        cart.map((item) => (
-          <p key={item.id} className="text-lg">{item.name} - {item.price} ₸</p>
-        ))
-      )}
-      {cart.length > 0 && (
-        <div className="mt-6 p-4 border rounded-lg text-center">
-          <h2 className="text-2xl font-bold flex items-center justify-center">
-            <CreditCard className="mr-2" /> Оплата
+        <div className="mb-4 p-4 border rounded-lg text-center">
+          <h2 className="text-xl font-bold flex items-center justify-center">
+            <User className="mr-2" /> Вход
           </h2>
-          <select className="p-2 border rounded mb-2" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
-            <option value="card">Картой (Visa, Mastercard)</option>
-            <option value="cash">Наличными</option>
-          </select>
-          <Button className="mt-2" onClick={handlePayment}>Оплатить</Button>
+          <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="mb-2" />
+          <Input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)} className="mb-2" />
+          <Button onClick={handleLogin}>Войти</Button>
         </div>
       )}
-      <div className="mt-4 text-center">
-        <Button onClick={() => router.push('/')}>Вернуться в магазин</Button>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {products.map((product) => (
+          <Card key={product.id} className="p-4">
+            <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded" />
+            <CardContent>
+              <h2 className="text-xl font-semibold">{product.name}</h2>
+              <p className="text-lg">{product.price} ₸</p>
+              <Button className="mt-2" onClick={() => addToCart(product)}>
+                Добавить в корзину
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      <div className="mt-6 p-4 border rounded-lg">
+        <h2 className="text-2xl font-bold flex items-center justify-between cursor-pointer" onClick={() => router.push('/cart')}>
+          <span className="flex items-center"><ShoppingCart className="mr-2" /> Корзина</span>
+        </h2>
       </div>
     </div>
   );
