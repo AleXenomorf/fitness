@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, CreditCard } from "lucide-react";
+import { ShoppingCart, User } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/router";
 
@@ -56,10 +56,13 @@ export default function FruitShop() {
           </Card>
         ))}
       </div>
-      <div className="mt-6 p-4 border rounded-lg">
-        <h2 className="text-2xl font-bold flex items-center justify-between cursor-pointer" onClick={() => router.push('/cart')}>
-          <span className="flex items-center"><ShoppingCart className="mr-2" /> Корзина</span>
+      <div className="mt-6 p-4 border rounded-lg text-center">
+        <h2 className="text-2xl font-bold flex items-center justify-center">
+          <ShoppingCart className="mr-2" /> Корзина
         </h2>
+        <Button className="mt-2" onClick={() => router.push('/cart')}>
+          Перейти в корзину
+        </Button>
       </div>
     </div>
   );
