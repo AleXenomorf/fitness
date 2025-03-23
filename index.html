@@ -23,19 +23,35 @@
     </div>
     <div class="container">
         <div class="item">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images1.webp" data-mobile="https://alexenomorf.github.io/fitness/mob1.webp" alt="Image 1" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images1.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob1.webp" 
+                 alt="Image 1" 
+                 loading="lazy">
             <div class="logo-overlay">
                 <img src="https://alexenomorf.github.io/fitness/logo2.webp" alt="Logo 2" loading="lazy">
             </div>
         </div>
         <div class="item" id="about-section">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images2.webp" data-mobile="https://alexenomorf.github.io/fitness/mob2.webp" alt="Image 2" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images2.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob2.webp" 
+                 alt="Image 2" 
+                 loading="lazy">
         </div>
         <div class="item">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images3.webp" data-mobile="https://alexenomorf.github.io/fitness/mob3.webp" alt="Image 3" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images3.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob3.webp" 
+                 alt="Image 3" 
+                 loading="lazy">
         </div>
         <div class="item" id="slider-section">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images4.webp" data-mobile="https://alexenomorf.github.io/fitness/mob4.webp" alt="Image 4" loading="lazy"> 
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images4.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob4.webp" 
+                 alt="Image 4" 
+                 loading="lazy"> 
             <div class="results-text">
                 <span class="results">РЕЗУЛЬТАТЫ</span>
                 <span class="students">ПОДОПЕЧНЫХ</span>
@@ -62,23 +78,47 @@
             </div>
         </div>
         <div class="item" id="cb-club-section">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images5.webp" data-mobile="https://alexenomorf.github.io/fitness/mob5.webp" alt="Image 5" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images5.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob5.webp" 
+                 alt="Image 5" 
+                 loading="lazy">
         </div>
         <div class="item">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images6.webp" data-mobile="https://alexenomorf.github.io/fitness/mob6.webp" alt="Image 6" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images6.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob6.webp" 
+                 alt="Image 6" 
+                 loading="lazy">
         </div>
         <div class="item">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images7.webp" data-mobile="https://alexenomorf.github.io/fitness/mob7.webp" alt="Image 7" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images7.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob7.webp" 
+                 alt="Image 7" 
+                 loading="lazy">
         </div>
         <div class="item">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images8.webp" data-mobile="https://alexenomorf.github.io/fitness/mob8.webp" alt="Image 8" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images8.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob8.webp" 
+                 alt="Image 8" 
+                 loading="lazy">
         </div>
         <div class="item" id="prices-section">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images9.webp" data-mobile="https://alexenomorf.github.io/fitness/mob9.webp" alt="Image 9" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images9.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob9.webp" 
+                 alt="Image 9" 
+                 loading="lazy">
             <a href="https://www.instagram.com/cult.of.the.body/?igsh=dGJ3NTNwcnhocnRo&utm_source=qr" class="join-button" target="_blank">ВСТУПИТЬ В КОМАНДУ</a>
         </div>
         <div class="item" id="contacts-section">
-            <img src="" data-desktop="https://alexenomorf.github.io/fitness/images10.webp" data-mobile="https://alexenomorf.github.io/fitness/mob10.webp" alt="Image 10" loading="lazy">
+            <img src="" 
+                 data-desktop="https://alexenomorf.github.io/fitness/images10.webp" 
+                 data-mobile="https://alexenomorf.github.io/fitness/mob10.webp" 
+                 alt="Image 10" 
+                 loading="lazy">
             <div class="logos-container">
                 <a href="https://t.me/Lebedos73" target="_blank" class="icon-link">
                     <i class="fab fa-telegram-plane"></i>
@@ -113,16 +153,13 @@
                 const desktopSrc = img.getAttribute('data-desktop');
                 if (isMobileDevice() && !isLandscape() && mobileSrc) {
                     img.src = mobileSrc;
-                    console.log(`Установлено мобильное изображение: ${mobileSrc}`); // Отладочное сообщение
                 } else if (desktopSrc) {
                     img.src = desktopSrc;
-                    console.log(`Установлено десктопное изображение: ${desktopSrc}`); // Отладочное сообщение
                 }
             });
         }
         setImageSources();
         window.addEventListener("orientationchange", () => {
-            console.log("Ориентация изменена, обновляю изображения..."); // Отладочное сообщение
             setImageSources();
         });
         const swiper = new Swiper('.swiper', {
